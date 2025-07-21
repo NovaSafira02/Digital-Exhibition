@@ -93,17 +93,17 @@
                 <form action="{{ route('mentor.store') }}" method="POST" class="modal-content">
                     @csrf
                     <div class="modal-header">
-                        <h5 class="modal-title">Tambah Mentor</h5>
+                        <h5 class="modal-title">Tambah List Mentor</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label>Username</label>
+                            <label>Nama Mentor</label>
                             <input type="text" name="username" class="form-control" required>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary" style="background: #8A3DFF">Buat akun mentor</button>
+                        <button class="btn btn-primary" style="background: #8A3DFF">Simpan</button>
                     </div>
                 </form>
             </div>
