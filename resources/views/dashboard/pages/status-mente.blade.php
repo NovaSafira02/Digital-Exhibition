@@ -60,40 +60,42 @@
             </div>
         </div>
     </div>
-    @foreach ($project->Status as $status)
-        <div class="modal fade" id="komentarModal{{ $status->id }}" tabindex="-1"
-            aria-labelledby="komentarModalLabel{{ $status->id }}" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title fw-bold" id="komentarModalLabel{{ $status->id }}">Informasi Detail</h5>
-                    </div>
-                    <div class="modal-body">
-
-                        <div class="mb-3">
-                            <h6 class="text-muted">Status</h6>
-                            <h6 class="fw-bold">
-                                @if ($status->status == 'Disetujui')
-                                    <span class="badge badge-setujui-outline">Disetujui</span>
-                                @elseif ($status->status == 'Revisi')
-                                    <span class="badge badge-revisi-outline">Revisi</span>
-                                @endif
-                            </h6>
+    @foreach ($projects as $project)
+        @foreach ($project->Status as $status)
+            <div class="modal fade" id="komentarModal{{ $status->id }}" tabindex="-1"
+                aria-labelledby="komentarModalLabel{{ $status->id }}" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title fw-bold" id="komentarModalLabel{{ $status->id }}">Informasi Detail</h5>
                         </div>
+                        <div class="modal-body">
 
-                        <div class="mb-3">
-                            <h6 class="text-muted">Tanggal</h6>
-                            <h6 class="fw-bold">{{ $status->created_at->format('d M Y H:i') }}</h6>
-                        </div>
+                            <div class="mb-3">
+                                <h6 class="text-muted">Status</h6>
+                                <h6 class="fw-bold">
+                                    @if ($status->status == 'Disetujui')
+                                        <span class="badge badge-setujui-outline">Disetujui</span>
+                                    @elseif ($status->status == 'Revisi')
+                                        <span class="badge badge-revisi-outline">Revisi</span>
+                                    @endif
+                                </h6>
+                            </div>
 
-                        <div class="mb-3">
-                            <h6 class="text-muted">Catatan Revisi</h6>
-                            <h6 class="fw-bold">{{ $status->comment }}</h6>
+                            <div class="mb-3">
+                                <h6 class="text-muted">Tanggal</h6>
+                                <h6 class="fw-bold">{{ $status->created_at->format('d M Y H:i') }}</h6>
+                            </div>
+
+                            <div class="mb-3">
+                                <h6 class="text-muted">Catatan Revisi</h6>
+                                <h6 class="fw-bold">{{ $status->comment }}</h6>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     @endforeach
 @endsection
 @section('script')
@@ -140,6 +142,6 @@
             font-size: 0.675rem;
             text-transform: capitalize;
         }
-            
+
         </style>
     @endsection

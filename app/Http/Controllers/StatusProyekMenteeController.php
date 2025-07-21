@@ -16,6 +16,7 @@ class StatusProyekMenteeController extends Controller
             ->with(['Status' => function($query) {
                 $query->orderBy('created_at', 'desc');
             }])
+            ->orderBy('created_at', 'desc')
             ->get();
         return view('dashboard.pages.status-mente')->with(compact('pages', 'projects'));
     }

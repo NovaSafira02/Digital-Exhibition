@@ -55,7 +55,7 @@
         </div>
     </div>
     @foreach ($pesans as $pesan)
-        <div class="modal fade" id="detailModal{{ $pesan->id }}" tabindex="1"
+        <div class="modal fade" id="detailModal{{ $pesan->id }}" tabindex="-1"
             aria-labelledby="detailModalLabel{{ $pesan->id }}" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-scrollable">
                 <div class="modal-content">

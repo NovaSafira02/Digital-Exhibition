@@ -45,7 +45,7 @@ class DashboardMentorController extends Controller
         Status::create([
             'status' => 'Disetujui',
             'projectId' => $project->id,
-            'comment' => 'Project disetujui oleh reviewer.',
+            'comment' => 'Project disetujui oleh Mentor',
         ]);
 
         return back()->with('success', 'Project disetujui.');
