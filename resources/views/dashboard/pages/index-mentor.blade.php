@@ -41,18 +41,26 @@
                                 <td>{{ $project->nama_group }}</td>
 
                                 {{-- Mentor dari kategori->mentorProject --}}
-                                <td>
+
+                                <td class="p-3">
                                     @php
-                                        $mentors = $project->Kategori->MentorProject ?? [];
+                                        $mentorUsernames = [];
                                     @endphp
-                                    @foreach ($mentors as $key => $mentor)
-                                        <span class="badge bg-primary me-1">
-                                            {{ $mentor->Mentor->username }}
-                                        </span>
-                                        @if (!$loop->last)
-                                            ,
+                                    @foreach ($project->MentorGroup as $group)
+                                        @php
+                                            $mentorUsername = optional($group->MentorProject->Mentor)->username;
+                                        @endphp
+
+                                        @if ($mentorUsername)
+                                            @php
+                                                $mentorUsernames[] = $mentorUsername;
+                                            @endphp
                                         @endif
                                     @endforeach
+
+                                    @if (count($mentorUsernames) > 0)
+                                        {{ implode(', ', $mentorUsernames) }}
+                                    @endif
                                 </td>
 
 

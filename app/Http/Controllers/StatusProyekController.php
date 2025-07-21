@@ -13,7 +13,11 @@ class StatusProyekController extends Controller
     public function index()
     {
         $pages = "Status Project";
-        $projects = Project::orderBy('created_at', 'desc')->get();
+        $projects = Project::whereHas('Status', function($query) {
+            $query->whereIn('status', ['Disetujui', 'Revisi']);
+        })
+        ->orderBy('created_at', 'desc')
+        ->get();
         return view('dashboard.pages.status-proyek')->with(compact('projects', 'pages'));
     }
 
