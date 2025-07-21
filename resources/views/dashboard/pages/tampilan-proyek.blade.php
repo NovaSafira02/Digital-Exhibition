@@ -60,7 +60,6 @@
             <!-- Mentor Section -->
             <section>
                 <h3 class="section-title">Mentor Group</h3>
-                {{-- <div class="d-flex flex-wrap gap-4 fs-5"> --}}
                 <div class ="row g-4 fs-5">
                     @foreach ($project->MentorGroup as $mentorGroup)
                         @php

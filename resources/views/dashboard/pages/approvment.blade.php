@@ -73,20 +73,22 @@
         <!-- Mentor Section -->
         <section>
             <h3 class="section-title">Mentor Group</h3>
-            <div class="d-flex flex-wrap gap-4 fs-5">
+            <div class="row g-4 fs-5">
                 @foreach ($project->MentorGroup as $mentorGroup)
                     @php
                         $mentorUsername = optional($mentorGroup->MentorProject->Mentor)->username;
                     @endphp
 
                     @if ($mentorUsername)
-                        <div class="d-flex align-items-center gap-2 flex-grow-1">
+                        <div class="col-6 col-md-4 col-lg-3 team-member d-flex">
                             <span class="person-icon">👤</span>{{ $mentorUsername }}
                         </div>
                     @endif
                 @endforeach
             </div>
         </section>
+
+        
 
         @php
             $groupedMembers = $project->Member->groupBy(fn($member) => $member->MemberMaster->group);
