@@ -69,18 +69,18 @@
                     <form action="{{ route('mentor.update', $mentor->id) }}" method="POST" class="modal-content">
                         @csrf @method('PUT')
                         <div class="modal-header">
-                            <h5 class="modal-title">Edit Mentor</h5>
+                            <h5 class="modal-title">Edit Nama Mentor</h5>
                         </div>
                         <div class="modal-body">
                             <div class="mb-3">
-                                <label>Username</label>
+                                <label>Nama Mentor</label>
                                 <input type="text" name="username" value="{{ $mentor->username }}" class="form-control"
                                     required>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal" style="background: rgba(92, 92, 92, 0.2); color:rgb(92, 92, 92)">Batal</button>
+                            <button type="submit" class="btn btn-primary" style="background: #8A3DFF">Simpan</button>
                         </div>
                     </form>
                 </div>
@@ -93,7 +93,7 @@
                 <form action="{{ route('mentor.store') }}" method="POST" class="modal-content">
                     @csrf
                     <div class="modal-header">
-                        <h5 class="modal-title">Tambah List Mentor</h5>
+                        <h5 class="modal-title">Tambah Nama Mentor</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
