@@ -24,7 +24,7 @@
                 <table class="table table-striped w-100" id="myTable">
                     <thead>
                         <tr>
-                            <th>Nomor</th>
+                            <th>No</th>
                             <th>Nama Group</th>
                             <th>Mentor Group</th>
                             <th>Kategori</th>
