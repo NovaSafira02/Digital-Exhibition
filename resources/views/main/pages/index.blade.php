@@ -112,7 +112,7 @@
 
     <section class="here2 d-flex align-items-center mb-5 pb-5" style="background: #FAFAFA">
         <div class="container text-center">
-            <h1 class="my-5">Testimoni Alumni</h1>
+            <h1 class="my-5">Testimoni Alumni e</h1>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
