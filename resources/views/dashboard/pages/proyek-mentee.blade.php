@@ -70,6 +70,12 @@
                         <!-- Thumbnail -->
                         <div class="card-outer mb-4">
                             <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 p-3">
+                                @if ($project->is_best == 1)
+                                    <img src="{{ asset('img/label-card.png') }}"
+                                        alt="Best Project Label"
+                                        class="position-absolute top-0 end-0 m-3"
+                                        style="width: 260px; z-index: 10;">
+                                @endif
                                 <img src="{{ asset('storage/' . $project->thumbnail) }}" class="img-fluid img-card"
                                     alt="Thumbnail Project" />
                             </div>

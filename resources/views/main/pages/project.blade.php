@@ -19,7 +19,13 @@
     <div class="container">
 
         <div class=" mb-4">
-            <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 p-3">
+            <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 p-3 position-relative">
+                @if ($project->is_best == 1)
+                    <img src="{{ asset('img/label-card.png') }}"
+                        alt="Best Project Label"
+                        class="position-absolute top-0 end-0 m-3"
+                        style="width: 260px; z-index: 10;">
+                @endif
                 <img src="{{ asset('storage/' . $project->thumbnail) }}" class="img-fluid img-card"
                     alt="Laptop screen depicting HidroTani online community forum page for hydroponic users" />
             </div>

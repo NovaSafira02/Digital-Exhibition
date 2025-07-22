@@ -67,39 +67,6 @@
         </div>
         
 
-
-        {{-- <div class="row g-4">
-            <!-- Card 1 -->
-            @foreach ($projects as $project)
-                <div class="col-12 col-md-6 col-lg-4 position-relative">
-                    @if ($project->is_best == 1)
-                        <div class="ribbon" aria-label="Best Project">Best Project</div>
-                    @endif
-                    <a href="{{ route('project.show', $project->id) }}" class="text-decoration-none text-dark">
-                        <div class="card h-100 shadow-sm">
-                            <img src="{{ asset('storage/' . $project->thumbnail) }}"
-                                alt="Digital peternakan website UI showing dashboard and analytics with sheep images on brown background"
-                                class="card-img-top"
-                                onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b16d330d-2919-418a-a0bf-0ae83fe4cdaa.png';" />
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">{{ $project->nama_product }}</h5>
-                                <div class="mb-2">
-                                    <span class="badge badge-purple">by {{ $project->nama_group }}</span>
-                                    <span class="badge badge-blue">{{ $project->Kategori->nama }}</span>
-                                    <span class="badge badge-purple-outline">Batch {{ $project->Kategori->batch }}</span>
-                                </div>
-                                <p class="card-text small line-clamp-3">
-                                    {{ $project->deskripsi }}
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            @endforeach
-
-        </div> --}}
-
-
         @if ($projects->hasPages())
             <div class="mt-4 d-flex justify-content-center">
                 <nav>

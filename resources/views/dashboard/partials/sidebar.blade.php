@@ -1,4 +1,4 @@
-<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
+ <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
      id="sidenav-main" style="background: #eee6fb;">
      <div class="sidenav-header">
          <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
@@ -11,7 +11,7 @@
                 @else
                     {{ url('/dashboard/index-mente') }} @endif
             ">
-             <span class="ms-1 fw-bolder">
+             <span class="ms-1 font-weight-bold">
                  @if (auth()->user()->isAdmin == 1)
                      Admin Infinite Learning
                  @elseif (auth()->user()->MentorProject != null)
@@ -20,7 +20,7 @@
                      Mentee Dashboard
                  @endif
              </span>
-             <span class="ms-1 " style="word-break: break-word; white-space: normal;">
+             <span class="ms-1 ">
                  @if (auth()->user()->isAdmin == 1)
                      Head Program
                  @elseif (auth()->user()->MentorProject != null)
@@ -31,7 +31,7 @@
              </span>
          </a>
      </div>
-     <br>
+     <hr class="horizontal dark mt-0">
      <div class="collapse navbar-collapse w-auto " id="sidenav-collapse-main">
          <ul class="navbar-nav">
              @if (auth()->user()->isAdmin == 1)
