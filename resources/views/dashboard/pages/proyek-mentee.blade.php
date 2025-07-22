@@ -18,7 +18,6 @@
             </div>
         </div>
 
-        {{-- lama --}}
         <div class="card">
             <div class="card-body">
                 <h5 class="mb-4">Daftar Project</h5>
@@ -58,6 +57,7 @@
     </div>
 
     @foreach ($projects as $project)
+        <!-- Modal Detail Project -->
         <div class="modal fade" id="detailModal{{ $project->id }}" tabindex="-1"
             aria-labelledby="detailModalLabel{{ $project->id }}" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-scrollable">
@@ -172,16 +172,24 @@
                                     </div>
                                 </section>
                             @endforeach
+
                             <div class="row w-100">
                                 <div class="col d-flex justify-content-end">
                                     <button class="btn btn-secondary me-2" close="close" data-bs-dismiss="modal"
                                         style="background: rgba(92, 92, 92, 0.2); color:rgb(92, 92, 92)">
-                                        Batal
+                                        Tutup
                                     </button>
-                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSetujui"
-                                        style="background: #8A3DFF">
-                                        Jadikan Best Project
-                                    </button>
+                                    @if($project->is_best == 1)
+                                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalCancelBest{{ $project->id }}"
+                                            style="background: #FF3D3D">
+                                            Batalkan Best Project
+                                        </button>
+                                    @else
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSetujui{{ $project->id }}"
+                                            style="background: #8A3DFF">
+                                            Jadikan Best Project
+                                        </button>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -189,31 +197,55 @@
                 </div>
             </div>
         </div>
-    @endforeach
 
-    <div class="modal fade" id="modalSetujui" tabindex="-1" aria-labelledby="modalSetujuiLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <form action="{{ route('project.status.best', $project->id) }}" method="POST">
-                @csrf
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalSetujuiLabel">Jadikan Best Project</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <!-- Modal konfirmasi untuk Jadikan Best Project -->
+        <div class="modal fade" id="modalSetujui{{ $project->id }}" tabindex="-1" aria-labelledby="modalSetujuiLabel{{ $project->id }}" aria-hidden="true">
+            <div class="modal-dialog">
+                <form action="{{ route('project.status.best', $project->id) }}" method="POST">
+                    @csrf
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalSetujuiLabel{{ $project->id }}">Jadikan Best Project</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Yakin ingin menjadikan project ini best project?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal"
+                                style="background: rgba(92, 92, 92, 0.2); color:rgb(92, 92, 92)">Batal</button>
+                            <button class="btn btn-primary" type="submit" style="background: #8A3DFF">Jadikan Best
+                                Project</button>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <p>Yakin ingin menjadikan project ini best project?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary me-2" close="close" data-bs-dismiss="modal"
-                            style="background: rgba(92, 92, 92, 0.2); color:rgb(92, 92, 92)">Batal</button>
-                        {{-- <button class="btn btn-secondary" data-bs-dismiss="modal">Batal</button> --}}
-                        <button class="btn btn-primary" type="submit" style="background: #8A3DFF">Jadikan Best
-                            Project</button>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
+
+        <!-- Modal konfirmasi untuk Batalkan Best Project -->
+        <div class="modal fade" id="modalCancelBest{{ $project->id }}" tabindex="-1" aria-labelledby="modalCancelBestLabel{{ $project->id }}" aria-hidden="true">
+            <div class="modal-dialog">
+                <form action="{{ route('project.status.cancel-best', $project->id) }}" method="POST">
+                    @csrf
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalCancelBestLabel{{ $project->id }}">Batalkan Best Project</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Yakin ingin membatalkan status best project untuk project ini?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal"
+                                style="background: rgba(92, 92, 92, 0.2); color:rgb(92, 92, 92)">Batal</button>
+                            <button class="btn btn-danger" type="submit" style="background: #FF3D3D">Batalkan Best
+                                Project</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    @endforeach
 @endsection
 
 @section('script')
@@ -238,6 +270,7 @@
         });
     </script>
 @endsection
+
 @section('css')
     <style>
         body {
@@ -419,7 +452,6 @@
         }
 
         @media (max-width: 767px) {
-
             .img-card,
             .card-outer {
                 padding: 0.5rem;

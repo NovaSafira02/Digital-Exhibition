@@ -37,7 +37,7 @@ Route::prefix('dashboard')->group(function () {
     Route::post('/project/{project}/setujui', [DashboardMentorController::class, 'setujui'])->name('project.status.setujui');
     Route::post('/project/{project}/revisi', [DashboardMentorController::class, 'revisi'])->name('project.status.revisi');
     Route::post('/project/{project}/best', [DashboardMentorController::class, 'best'])->name('project.status.best');
-
+    Route::post('/project/{project}/cancel-best', [DashboardMentorController::class, 'cancelBest'])->name('project.status.cancel-best');
     Route::get('/index-mentor', [DashboardMentorController::class, 'index'])->name('dashboard.mentor');
     Route::post('/index-mente', [DashboardMenteController::class, 'store'])->name('projects.store');
     Route::get('/get-mentors/{kategoriId}', [DashboardMenteController::class, 'getMentorsByKategori']);

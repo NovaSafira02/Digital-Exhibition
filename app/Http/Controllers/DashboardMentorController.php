@@ -75,4 +75,13 @@ class DashboardMentorController extends Controller
 
         return back()->with('success', 'Project Sudah Menjadi Best!');
     }
+
+    public function cancelBest(Request $request, Project $project)
+    {
+        $project->update([
+            'is_best' => 0,
+        ]);
+
+        return back()->with('success', 'Status Best Project telah dibatalkan!');
+    }
 }

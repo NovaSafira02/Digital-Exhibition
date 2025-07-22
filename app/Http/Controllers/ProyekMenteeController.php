@@ -12,7 +12,11 @@ class ProyekMenteeController extends Controller
      */
     public function index()
     {
-        $projects = Project::with('kategori')->get(); // relasi ke tabel kategori_projects
+        $projects = Project::with(['kategori', 'Status'])
+            ->whereHas('Status', function($query) {
+                $query->where('status', 'Disetujui');
+            })
+            ->get();
         $pages = 'Proyek Mentee';
         return view('dashboard.pages.proyek-mentee', compact('projects', 'pages'));
     }
