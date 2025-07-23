@@ -31,7 +31,7 @@
                         </ul>
                     </div>
                     <div class="rounded-container shadow-sm p-3">
-                        <h5 class="mb-3">Project Links</h5>
+                        <h5 class="mb-3">Link Proyek</h5>
                         <ul class="ps-3">
                             <li><a href="{{ $project->link_website }}" class="link-blue" target="_blank" rel="noopener">Link
                                     Github</a></li>

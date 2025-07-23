@@ -53,7 +53,7 @@
                         </ul>
                     </div>
                     <div class="rounded-container shadow-sm p-3 mb-4">
-                        <h5 class="mb-3">Project Links</h5>
+                        <h5 class="mb-3">Link Proyek</h5>
                         <ul class="ps-3">
                             <li><a href="{{ $project->link_website }}" class="link-blue" target="_blank" rel="noopener">Link
                                     Github</a></li>
@@ -62,7 +62,7 @@
                         </ul>
                     </div>
                     <div class="rounded-container shadow-sm p-3">
-                        <h5 class="mb-3">Tertarik</h5>
+                        <h5 class="mb-3">Tertarik Dengan Proyek Ini?</h5>
                         <div class="row px-3 flex-column mb-3">
                             <a href="{{ $project->link_website }}" class="link-blue" target="_blank"
                                 style="text-decoration:none" rel="noopener">Info@infinitelearning.id</a>

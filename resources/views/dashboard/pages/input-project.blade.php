@@ -107,22 +107,22 @@
 
                 <!-- Product Information -->
                 <div class="mb-4">
-                    <h5 class="fw-bold">Product Information</h5>
+                    <h5 class="fw-bold">Informasi Produk</h5>
                     <p class="mb-3">Bagian ini berisi informasi seputar detail produk/proyek yang sudah dikembangkan pada
                         <strong>Massive Challenge</strong> di Infinite Learning Indonesia.
                     </p>
 
                     <div class="mb-3">
-                        <h6 for="productName">Product Name</h6>
+                        <h6 for="productName">Nama Produk</h6>
                         <small class="text-muted d-block mb-1">Gunakan format <strong>Title Case</strong> ya, contohnya
                             seperti
                             ini: Ayo Bercocok Tanam.</small>
-                        <input type="text" id="productName" class="form-control" placeholder="Input your product name"
+                        <input type="text" id="productName" class="form-control" placeholder="Masukkan Nama Produk"
                             name="nama_product" />
                     </div>
 
                     <div class="mb-3">
-                        <h6 for="descriptionProduct">Description Product</h6>
+                        <h6 for="descriptionProduct">Deskripsi Produk</h6>
                         <small class="text-muted d-block mb-1">Kolom ini mendukung Rich Text Formatting. Usahakan
                             deskripsinya yang
                             padat dan berisi, ceritakan dampaknya kepada pengguna dan kamu bisa meng-highlight hal-hal yang
@@ -178,7 +178,7 @@
                     <div class="mb-3">
                         <h6 for="linkFigma">Link Figma</h6>
                         <small class="text-muted d-block mb-1">Masukkan Link figma Project .</small>
-                        <input type="url" id="linkFigma" class="form-control" placeholder="Input your product name"
+                        <input type="url" id="linkFigma" class="form-control" placeholder="Masukkan link prototype"
                             name="link_figma" />
                     </div>
 
@@ -189,7 +189,7 @@
                             mempunyai nama domain resmi, kamu bisa menggunakan platform seperti <strong>Vercel</strong> atau
                             <strong>Netlify</strong> atau platform lain sejenisnya. kamu juga bisa menggunakan link
                             github</small>
-                        <input type="url" id="linkGithub" class="form-control" placeholder="Input your product name"
+                        <input type="url" id="linkGithub" class="form-control" placeholder="Masukkan link produk"
                             name="link_website" />
                     </div>
                 </div>
@@ -293,7 +293,7 @@
                 shouldSort: false,
                 placeholder: false,
             });
-            
+
             // Inisialisasi Choices.js untuk techSelect
             const techSelect = document.getElementById('techSelect');
             new Choices(techSelect, {
@@ -323,22 +323,22 @@
                 cursor: pointer;
                 transition: background-color 0.3s ease;
             }
-    
+
             .file-drop-zone:hover {
                 background-color: #e9ecef;
             }
-    
+
             .file-drop-zone svg {
                 width: 30px;
                 height: 30px;
                 color: #6c757d;
             }
-    
+
             .btn-disabled {
                 pointer-events: none;
                 opacity: 0.65;
             }
-    
+
             small.text-muted {
                 user-select: none;
             }

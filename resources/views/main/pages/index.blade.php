@@ -82,7 +82,7 @@
                                     <span class="badge badge-pink">{{ $project->Kategori->nama }}</span>
                                     <span class="badge badge-blue-outline">Batch {{ $project->Kategori->batch }}</span>
                                 </div>
-                                <div class="line-clamp-3 small">
+                                <div class="line-clamp-3 lh-lg small">
                                     {!! strip_tags($project->deskripsi, '<b><strong><i><em>') !!}
                                 </div>
                             </div>

@@ -113,12 +113,12 @@
                                         </ul>
                                     </div>
                                     <div class="rounded-container shadow-sm p-3">
-                                        <h5 class="mb-3">Project Links</h5>
+                                        <h5 class="mb-3">Link Proyek</h5>
                                         <ul class="ps-3">
                                             <li><a href="{{ $project->link_website }}" class="link-blue" target="_blank"
-                                                    rel="noopener">Website</a></li>
+                                                    rel="noopener">Link Github</a></li>
                                             <li><a href="{{ $project->link_figma }}" class="link-blue" target="_blank"
-                                                    rel="noopener">Prototype</a></li>
+                                                    rel="noopener">Link Prototype</a></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -37,9 +37,9 @@
                     <a href="{{ route('project.show', $project->id) }}" class="text-decoration-none text-dark">
                         <div class="card h-100 shadow-sm position-relative">
                             @if ($project->is_best == 1)
-                                <img src="{{ asset('img/label-card.png') }}" 
-                                    alt="Best Project Label" 
-                                    class="position-absolute top-0 end-0" 
+                                <img src="{{ asset('img/label-card.png') }}"
+                                    alt="Best Project Label"
+                                    class="position-absolute top-0 end-0"
                                     style="width: 146px; z-index: 10;">
                             @endif
                             <img src="{{ asset('storage/' . $project->thumbnail) }}"
@@ -56,7 +56,7 @@
                                 {{-- <p class="card-text small line-clamp-3">
                                     {{ $project->deskripsi }}
                                 </p> --}}
-                                <div class="line-clamp-3 small">
+                                <div class="line-clamp-3 lh-lg small">
                                         {!! strip_tags($project->deskripsi, '<b><strong><i><em>') !!}
                                     </div>
                             </div>
@@ -65,7 +65,7 @@
                 </div>
             @endforeach
         </div>
-        
+
 
         @if ($projects->hasPages())
             <div class="mt-4 d-flex justify-content-center">
