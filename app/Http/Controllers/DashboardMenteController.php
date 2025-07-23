@@ -66,6 +66,23 @@ class DashboardMenteController extends Controller
     public function store(Request $request)
     {
         try {
+            // Cek apakah user sudah memiliki project
+            $existingProject = Project::where('userId', Auth::user()->id)
+                ->latest()
+                ->first();
+
+            if ($existingProject) {
+                // Cek status terakhir project
+                $latestStatus = $existingProject->Status()
+                    ->latest()
+                    ->first();
+
+                // Jika belum ada status atau status bukan 'Revisi', tidak boleh submit
+                if (!$latestStatus || $latestStatus->status !== 'Revisi') {
+                    return back()->with('error', 'Anda tidak dapat mengirim project baru. Tunggu project sebelumnya direvisi oleh mentor.');
+                }
+            }
+
             $request->validate([
                 'nama_group' => 'required|string|max:255',
                 'sesi_kelas' => 'required|string',
@@ -148,14 +165,11 @@ class DashboardMenteController extends Controller
             return redirect()->route('dashboard.mente')->with('success', 'Project berhasil disimpan!');
         } catch (\Exception $e) {
             DB::rollBack();
-
-            // Log error ke laravel.log
             Log::error('Gagal menyimpan project:', [
                 'error' => $e->getMessage(),
                 'line' => $e->getLine(),
                 'trace' => $e->getTraceAsString()
             ]);
-
             return back()->withInput()->with('error', 'Terjadi kesalahan saat menyimpan project. Silakan coba lagi.' . $e);
         }
     }

@@ -60,30 +60,31 @@
                 <a href="/showcase" class="btn btn-custom rounded">Lihat Proyek <img src="{{ asset('img/arrow-right.svg') }}" alt="panah kanan" class="ms-2" style="width: 1rem; height: 1rem;"></a>
             </div>
         </div>
-        <div class="row mt-4">
+        <div class="row mt-4 g-4">
             @foreach ($projects as $project)
-                <div class="col-md-4">
-                    <a href="{{ route('project.show', $project->id) }}" class="text-decoration-none text-black">
-                        <div class="project-card shadow-sm p-4" style="border: none;">
-                            <img src="{{ asset('storage/' . $project->thumbnail) }}" class="card-img-top mb-2" alt="Kosmiku">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <a href="{{ route('project.show', $project->id) }}" class="text-decoration-none text-dark">
+                        <div class="card h-100 shadow-sm position-relative">
+                            @if ($project->is_best == 1)
+                                <img src="{{ asset('img/label-card.png') }}"
+                                    alt="Best Project Label"
+                                    class="position-absolute top-0 end-0"
+                                    style="width: 146px; z-index: 10;">
+                            @endif
+                            <img src="{{ asset('storage/' . $project->thumbnail) }}"
+                                class="card-img-top"
+                                alt="{{ $project->nama_product }}"
+                                onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b16d330d-2919-418a-a0bf-0ae83fe4cdaa.png';" />
                             <div class="card-body">
-                                <h5 class="card-title fw-bold mb-2">{{ $project->nama_product }}</h5>
-                                <p class="card-text small line-clamp-3">
-                                    {{-- baru 1 --}}
-                                    {{-- <p class="line-clamp-3">
-                                        {{ Str::limit(strip_tags($project->deskripsi), 150, '...') }}
-                                    </p> --}}
-
-                                    {{-- baru 2 --}}
-                                    <div class="line-clamp-3 prose prose-sm">
-                                        {!! strip_tags($project->deskripsi, '<b><strong><i><em>') !!}
-                                    </div>
-
-                                    {{-- baru 3 --}}
-                                    {{-- <p class="line-clamp-3 text-sm text-gray-700">
-                                        {{ Str::limit(strip_tags($project->deskripsi), 120, '...') }}
-                                    </p> --}}
-                                </p>
+                                <h5 class="card-title fw-bold">{{ $project->nama_product }}</h5>
+                                <div class="mb-2">
+                                    <span class="badge badge-purple">by {{ $project->nama_group }}</span>
+                                    <span class="badge badge-pink">{{ $project->Kategori->nama }}</span>
+                                    <span class="badge badge-blue-outline">Batch {{ $project->Kategori->batch }}</span>
+                                </div>
+                                <div class="line-clamp-3 small">
+                                    {!! strip_tags($project->deskripsi, '<b><strong><i><em>') !!}
+                                </div>
                             </div>
                         </div>
                     </a>
@@ -313,6 +314,52 @@
         .footer .social-icons a {
             margin: 0 10px;
             color: #fff;
+        }
+        .card {
+            background-color: #fff;
+            color: #000;
+            border-radius: 0.5rem;
+            box-shadow: 0 8px 24px rgb(0 0 0 / 0.12);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 32px rgb(0 0 0 / 0.2);
+        }
+
+        .card-img-top {
+            object-fit: cover;
+            height: 180px;
+            width: 100%;
+        }
+
+        .badge-purple {
+            background-color: #8A3DFF;
+            color: #F4F3F9;
+            font-size: 0.675rem;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .badge-pink {
+            background-color: transparent;
+            color: #BE2CD2;
+            border: #BE2CD2 1px solid;
+            font-size: 0.675rem;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .badge-blue-outline {
+            border: 1px solid #214CE0;
+            color: #214CE0;
+            background-color: transparent;
+            font-weight: 600;
+            font-size: 0.675rem;
+            text-transform: capitalize;
         }
     </style>
 @endsection
