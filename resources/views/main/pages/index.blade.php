@@ -5,8 +5,10 @@
         <div class="row">
             <div class="col">
                 <h1 class="text-dark">Digital Exhibition: Showcase Proyek Mentee Infinite Learning</h1>
-                <p>Sebuah platform yang dirancang untuk menampilkan proyek-proyek yang dibuat oleh peserta program pelatihan
-                    pengembangan aplikasi dan website.</p>
+                <p>Menampilkan berbagai proyek inovatif karya para mentee dari beragam program pelatihan Infinite Learning. Tidak hanya terbatas pada pengembangan Aplikasi dan Website, pameran digital ini juga mencakup karya terbaik dari bidang Artificial Intelligence (AI), Game Development, Network Security, hingga Red Hat System Administration.
+                <br><br>
+                Jelajahi karya mereka, temukan inspirasi baru, dan dukung talenta digital masa depan!
+                </p>
                 <a href="/showcase" class="btn btn-custom rounded">Lihat Proyek Kami <img src="{{ asset('img/arrow-right.svg') }}" alt="panah kanan" class="ms-2" style="width: 1rem; height: 1rem;"></a>
             </div>
             <div class="col">
@@ -19,7 +21,7 @@
         <div class="row">
             <div class="col">
                 <h1>Digital Exhibition</h1>
-                <p>Digital Exhibition adalah sebuah platform yang dirancang untuk memungkinkan para peserta program
+                <p>Digital Exhibition adalah sebuah platform yang dirancang untuk para peserta program
                     pelatihan mempresentasikan karya mereka dalam bentuk website. Platform ini menjadi wadah untuk
                     menampilkan kreativitas serta kompetensi teknis yang telah mereka kembangkan selama mengikuti pelatihan.
                 </p>
@@ -27,7 +29,7 @@
                     <div class="col">
                         <div class="card" style="background: #FAFAFA; border: none;">
                             <div class="card-body">
-                                <h5>Pembelejaran</h5>
+                                <h5>Pembelajaran</h5>
                                 <p>Program pelatihan intensif yang dibimbing oleh mentor berpengalaman.</p>
                             </div>
                         </div>
@@ -49,7 +51,7 @@
         </div>
     </section>
 
-    <section class=" align-items-center p-5" style="background: #FAFAFA">
+    <section class="hero2 align-items-center p-5" style="background: #FAFAFA">
         <div class="row w-100">
             <div class="col">
                 <h1>Proyek Showcase</h1>
@@ -112,7 +114,7 @@
 
     <section class="here2 d-flex align-items-center mb-5 pb-5" style="background: #FAFAFA">
         <div class="container text-center">
-            <h1 class="my-5">Testimoni Alumni e</h1>
+            <h1 class="my-5">Testimoni Alumni</h1>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">

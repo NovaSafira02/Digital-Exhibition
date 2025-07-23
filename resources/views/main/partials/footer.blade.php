@@ -9,7 +9,7 @@
             </div>
             <div class="col">
                 <div class="contact">
-                    <h5 style="color: #fff;">Contact</h5>
+                    <h5 style="color: #fff;">Kontak</h5>
                     <p style="color: #fff;">Email: Info@infinitelearning.id<br>
                         Phone: +6282387597266<br>
                         Instagram: @infinitelearning_id</p>
@@ -17,7 +17,7 @@
             </div>
             <div class="col">
                 <div class="social-icons">
-                    <h5 style="color: #fff;">Follow Us</h5>
+                    <h5 style="color: #fff;">Ikuti Kami</h5>
                     <a href="#" style="font-size: 1.5rem;"><i class="bi bi-twitter"></i></a>
                     <a href="#" style="font-size: 1.5rem;"><i class="bi bi-instagram"></i></a>
                     <a href="#" style="font-size: 1.5rem;"><i class="bi bi-linkedin"></i></a>

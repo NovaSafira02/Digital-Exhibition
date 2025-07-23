@@ -44,7 +44,7 @@
             <div class="col">
                 <h1>Proyek Mentee Group Yang Ditampilkan</h1>
                 <p>Project yang ditampilkan terbagi dari beberapa kelompok/tim di beberapa program, ada juga kelompok yang
-                    collab
+                    collab antar program pelatihan.
                 </p>
             </div>
         </div>
@@ -111,8 +111,7 @@
         <div class="row d-flex align-items-center">
             <div class="col">
                 <h1>Game</h1>
-                <p>yang fokus pada pembuatan game berbasis web maupun mobile dengan memanfaatkan game engine seperti Unity
-                    atau Godot.
+                <p>Berfokus pada pengembangan game berbasis dekstop maupun mobile dengan memanfaatkan game engine seperti Unity.
                 </p>
             </div>
             <div class="col ">
@@ -128,7 +127,7 @@
             </div>
             <div class="col">
                 <h1>Artificial Intelligence</h1>
-                <p>dirancang untuk memberikan pemahaman menyeluruh tentang kecerdasan buatan serta penerapannya dalam
+                <p>Dirancang untuk memberikan pemahaman menyeluruh tentang kecerdasan buatan serta penerapannya dalam
                     pengembangan aplikasi digital. Dalam program ini, peserta akan mempelajari dasar-dasar Artificial
                     Intelligence, termasuk pengenalan machine learning, algoritma pembelajaran seperti klasifikasi dan
                     regresi, serta cara kerja model AI dalam mengolah data.
