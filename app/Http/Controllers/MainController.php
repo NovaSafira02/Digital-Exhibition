@@ -80,7 +80,7 @@ class MainController extends Controller
             ->with(['Status' => function ($query) {
                 $query->latest();
             }])
-            ->latest()
+            ->oldest()
             ->paginate(9) // <--- paginate di sini
             ->withQueryString(); // <--- penting supaya filter tetap saat ganti halaman
         return view('main.pages.showcase',  compact('projects', 'kategoriList', 'batchList', 'search', 'kategori', 'batch'));

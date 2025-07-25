@@ -117,7 +117,21 @@
         <div class="container text-center">
             <h1 class="my-5">Testimoni Alumni</h1>
             <div class="row">
-                <div class="col-md-4">
+            <div class="col-12">
+                <div class="video-wrapper shadow rounded-3 mb-5" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <iframe src="{{ $project->link_video }}"
+                                title="HidroTani Project Overview"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                                allowfullscreen
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                        </iframe>
+                    </div>
+                </div>
+                
+
+                {{-- di bwah ini card testi alumni  --}}
+                {{-- <div class="col-md-4">
                     <div class="card">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top-testi"
                             alt="Michael Chen">
@@ -154,7 +168,7 @@
                             <p class="card-text"><small class="text-muted">UI/UX Designer</small></p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
 

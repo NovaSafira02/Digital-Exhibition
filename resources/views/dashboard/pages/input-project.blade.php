@@ -113,6 +113,27 @@
                     </p>
 
                     <div class="mb-3">
+                        <h6>Logo Product</h6>
+                        <small class="text-muted d-block mb-1">
+                            Logo Product wajib menggunakan gambar berformat <b>*.PNG, *.JPG, atau *.SVG</b> dan ukuran file &lt; 2 MB.
+                            Disarankan menggunakan logo dengan background transparan untuk hasil terbaik.
+                        </small>
+                        <label for="logoProduct" class="file-drop-zone" tabindex="0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-image mt-2" viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21,15 16,10 5,21"></polyline>
+                            </svg>
+                            <span>upload logo product</span><br />
+                            <button type="button" class="btn btn-dark btn-sm mt-1">Pilih Logo</button>
+                            <input type="file" id="logoProduct" class="d-none" accept="image/*"
+                                aria-label="Upload Logo Product" name="logo" />
+                        </label>
+                    </div>
+
+                    <div class="mb-3">
                         <h6 for="productName">Nama Produk</h6>
                         <small class="text-muted d-block mb-1">Gunakan format <strong>Title Case</strong> ya, contohnya
                             seperti
@@ -154,13 +175,13 @@
                         <label for="thumbnailProduct" class="file-drop-zone" tabindex="0">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="feather feather-upload-cloud" viewBox="0 0 24 24">
-                                <polyline points="16 16 12 12 8 16"></polyline>
-                                <line x1="12" y1="12" x2="12" y2="21"></line>
-                                <path d="M20.39 18.39a5 5 0 00-9.79-1.6A4.5 4.5 0 015.5 17.5a4.5 4.5 0 00-.5 8.5h11"></path>
+                                class="feather feather-image mt-2" viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21,15 16,10 5,21"></polyline>
                             </svg>
                             <span>upload file thumbnail</span><br />
-                            <button type="button" class="btn btn-dark btn-sm mt-2">Pilih File</button>
+                            <button type="button" class="btn btn-dark btn-sm mt-1">Pilih File</button>
                             <input type="file" id="thumbnailProduct" class="d-none" accept="image/*"
                                 aria-label="Upload Thumbnail Product" name="thumbnail" />
                         </label>
@@ -228,6 +249,29 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script>
+        // Script to handle logo file input click on custom drop zone
+        const logoDropZone = document.querySelector('label[for="logoProduct"]');
+        const logoFileInput = document.getElementById('logoProduct');
+
+        if (logoDropZone && logoFileInput) {
+            logoDropZone.addEventListener('click', () => {
+                logoFileInput.click();
+            });
+
+            logoDropZone.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    logoFileInput.click();
+                }
+            });
+
+            logoFileInput.addEventListener('change', () => {
+                if (logoFileInput.files.length > 0) {
+                    logoDropZone.querySelector('span').textContent = logoFileInput.files[0].name;
+                }
+            });
+        }
+
         // Script to handle file input click on custom drop zone
         const dropZone = document.querySelector('.file-drop-zone');
         const fileInput = document.getElementById('thumbnailProduct');

@@ -21,14 +21,29 @@
                 <div class="col-lg-4">
                     <div class="rounded-container shadow-sm p-3 mb-4">
                         <h5 class="mb-3">Teknologi Yang Digunakan</h5>
-                        <ul class="tech-icons ps-0">
-                            @foreach ($project->Teches as $tech)
-                                <li><img src="{{ asset('storage/public/icons/' . $tech->icon) }}" alt=""
-                                        class="me-2" width="10%">
-                                    {{ $tech->nama }}
-                                </li>
-                            @endforeach
-                        </ul>
+                        <div class="row tech-container">
+                            @php
+                                $techCount = count($project->Teches);
+                                $techesPerColumn = 3;
+                                $columnCount = ceil($techCount / $techesPerColumn);
+                                $techIndex = 0;
+                            @endphp
+
+                            @for ($col = 0; $col < $columnCount; $col++)
+                                <div class="col-md-{{ 12 / min($columnCount, 3) }} mb-2">
+                                    <ul class="tech-icons ps-0">
+                                        @for ($i = 0; $i < $techesPerColumn && $techIndex < $techCount; $i++)
+                                            @php $tech = $project->Teches[$techIndex++]; @endphp
+                                            <li class="d-flex align-items-center mb-2">
+                                                <img src="{{ asset('storage/public/icons/' . $tech->icon) }}" alt="{{ $tech->nama }}" 
+                                                    class="me-2" width="24" height="24">
+                                                <span>{{ $tech->nama }}</span>
+                                            </li>
+                                        @endfor
+                                    </ul>
+                                </div>
+                            @endfor
+                        </div>
                     </div>
                     <div class="rounded-container shadow-sm p-3">
                         <h5 class="mb-3">Link Proyek</h5>

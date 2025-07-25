@@ -31,35 +31,97 @@
             </div>
 
             <!-- Video + Technologies + Links row -->
-            <div class="row gx-4 mb-4">
-                <div class="col-lg-8 mb-4">
-                    <div class="video-wrapper shadow rounded-3">
+            <div class="row gx-4">
+                <div class="col-lg-8">
+                    <div class="video-wrapper shadow rounded-3 mb-5">
                         <iframe src="{{ $project->link_video }}" title="HidroTani Project Overview" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                             allowfullscreen></iframe>
+                    </div>
+                    <!-- Title and badges -->
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="product-logo-container me-3">
+                            <img src="{{ asset('storage/' . $project->logo) }}" alt="{{ $project->nama_product }} Logo" class="product-logo">
+                            {{-- <img src="{{ asset('img/icons/edit-pass-icon.svg') }}" alt="Edit" width="32" height="32"> --}}
+                        </div>
+                        <h1 class="fw-bold mb-0">{{ $project->nama_product }}</h1>
+                    </div>
+                    <div class="mt-4 mb-3 d-flex flex-wrap gap-3 badge-group">
+                        <span class="badge badge-purple p-2">by {{ $project->nama_group }}</span>
+                        <span class="badge badge-pink p-2">{{ $project->Kategori->nama }}</span>
+                        <span class="badge badge-blue-outline p-2">Batch {{ $project->Kategori->batch }}</span>
                     </div>
                 </div>
 
                 <div class="col-lg-4">
                     <div class="rounded-container shadow-sm p-3 mb-4">
                         <h5 class="mb-3">Teknologi Yang Digunakan</h5>
-                        <ul class="tech-icons ps-0">
-                            @foreach ($project->Teches as $tech)
-                                <li><img src="{{ asset('storage/public/icons/' . $tech->icon) }}" alt=""
-                                        class="me-2" width="10%">
-                                    {{ $tech->nama }}
-                                </li>
-                            @endforeach
-                        </ul>
+                        <div class="row tech-container">
+                            @php
+                                $techCount = count($project->Teches);
+                                $techesPerColumn = 3;
+                                $columnCount = ceil($techCount / $techesPerColumn);
+                                $techIndex = 0;
+                            @endphp
+
+                            @for ($col = 0; $col < $columnCount; $col++)
+                                <div class="col-md-{{ 12 / min($columnCount, 3) }} mb-2">
+                                    <ul class="tech-icons ps-0">
+                                        @for ($i = 0; $i < $techesPerColumn && $techIndex < $techCount; $i++)
+                                            @php $tech = $project->Teches[$techIndex++]; @endphp
+                                            <li class="d-flex align-items-center mb-2">
+                                                <img src="{{ asset('storage/public/icons/' . $tech->icon) }}" alt="{{ $tech->nama }}" 
+                                                    class="me-2" width="24" height="24">
+                                                <span>{{ $tech->nama }}</span>
+                                            </li>
+                                        @endfor
+                                    </ul>
+                                </div>
+                            @endfor
+                        </div>
                     </div>
                     <div class="rounded-container shadow-sm p-3 mb-4">
                         <h5 class="mb-3">Link Proyek</h5>
-                        <ul class="ps-3">
-                            <li><a href="{{ $project->link_website }}" class="link-blue" target="_blank" rel="noopener">Link
-                                    Github</a></li>
-                            <li><a href="{{ $project->link_figma }}" class="link-blue" target="_blank" rel="noopener">Link
-                                    Prototype</a></li>
-                        </ul>
+                        <div class="project-links">
+                                <!-- Link Aplikasi Mobile -->
+                                @if($project->link_video)
+                                <div class="col-6">
+                                    <div class="link-item d-flex align-items-center">
+                                        <div class="me-3">
+                                            <img src="{{ asset('img/icons/android.svg') }}" alt="Android" width="30" height="30">
+                                        </div>
+                                        <a href="{{ $project->link_video }}" class="link-blue text-decoration-none" target="_blank" rel="noopener">Download Aplikasi
+                                        </a>
+                                    </div>
+                                </div>
+                                @endif
+
+                                <!-- Link Prototype Figma -->
+                                @if($project->link_figma)
+                                <div class="col-6">
+                                    <div class="link-item d-flex align-items-center">
+                                        <div class="me-3">
+                                            <img src="{{ asset('img/icons/figma.svg') }}" alt="Prototype" width="30" height="30">
+                                        </div>
+                                        <a href="{{ $project->link_figma }}" class="link-blue text-decoration-none" target="_blank" rel="noopener">
+                                            Link Prototype
+                                        </a>
+                                    </div>
+                                </div>
+                                @endif
+
+                            <!-- Baris kedua: Link Website -->
+                            @if($project->link_website)
+                            <div class="link-item d-flex align-items-center">
+                                <div class="me-3">
+                                    <img src="{{ asset('img/icons/website.svg') }}" alt="Web" width="30" height="30">
+                                </div>
+                                <a href="{{ $project->link_website }}" class="link-blue text-decoration-none" target="_blank" rel="noopener">
+                                    Link Website
+                                </a>
+                            </div>
+                            @endif
+                        </div>
                     </div>
                     <div class="rounded-container shadow-sm p-3">
                         <h5 class="mb-3">Tertarik Dengan Proyek Ini?</h5>
@@ -77,19 +139,14 @@
                 </div>
             </div>
 
-            <!-- Title and badges -->
-            <h1 class="fw-bold">{{ $project->nama_product }}</h1>
-            <div class="mt-4 mb-3 d-flex flex-wrap gap-3 badge-group">
-                <span class="badge badge-purple p-2">by {{ $project->nama_group }}</span>
-                <span class="badge badge-pink p-2">{{ $project->Kategori->nama }}</span>
-                <span class="badge badge-blue-outline p-2">Batch {{ $project->Kategori->batch }}</span>
-            </div>
+            
 
             <!-- Project description -->
             <section>
                 <h3 class="section-title">Deskripsi Project</h3>
-                <p>{!! $project->deskripsi !!}</p>
+                <p class="text-justify fs-1">{!! $project->deskripsi !!}</p>
             </section>
+
 
             <!-- Mentor Group -->
             <section>
@@ -102,7 +159,8 @@
 
                         @if ($mentorUsername)
                             <div class="col-6 col-md-4 col-lg-3 team-member d-flex">
-                                <span class="person-icon">👤</span>{{ $mentorUsername }}
+                                <span class="person-icon">👤</span>
+                                    <div class="ms-2">{{ $mentorUsername }}</div>
                             </div>
                         @endif
                     @endforeach
@@ -490,6 +548,61 @@
         .mb-badge {
             margin-right: 0.6rem;
             margin-bottom: 0.5rem;
+        }
+
+                /* Product Logo Styling */
+        .product-logo-container {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: #f8f9fa;
+            border-radius: 16px;
+            border: 2px solid #e9ecef;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-logo {
+            max-width: 60px;
+            max-height: 60px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+                /* Project Links Styling */
+        .project-links {
+            padding: 0;
+        }
+
+        .link-item {
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-bottom: 8px !important;
+        }
+
+        .link-item a {
+            font-weight: 500;
+            
+            font-size: 14px;
+        }
+
+        
+
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .product-logo-container {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .product-logo {
+                max-width: 45px;
+                max-height: 45px;
+            }
         }
 
         @media (max-width: 767px) {
