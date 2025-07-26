@@ -18,10 +18,10 @@
             <div class="col">
                 <div class="social-icons">
                     <h5 style="color: #fff;">Ikuti Kami</h5>
-                    <a href="#" style="font-size: 1.5rem;"><i class="bi bi-twitter"></i></a>
-                    <a href="#" style="font-size: 1.5rem;"><i class="bi bi-instagram"></i></a>
-                    <a href="#" style="font-size: 1.5rem;"><i class="bi bi-linkedin"></i></a>
-                    <a href="#" style="font-size: 1.5rem;"><i class="bi bi-tiktok"></i></a>
+                    <a href="#" target="_blank" style="font-size: 1.5rem;"><i class="bi bi-twitter"></i></a>
+                    <a href="#" target="_blank" style="font-size: 1.5rem;"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/infinite-learning-indonesia" target="_blank" style="font-size: 1.5rem;"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" target="_blank" style="font-size: 1.5rem;"><i class="bi bi-tiktok"></i></a>
                 </div>
             </div>
         </div>

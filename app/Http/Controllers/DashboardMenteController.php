@@ -70,19 +70,22 @@ class DashboardMenteController extends Controller
             $existingProject = Project::where('userId', Auth::user()->id)
                 ->latest()
                 ->first();
-    
+
             if ($existingProject) {
                 // Cek status terakhir project
                 $latestStatus = $existingProject->Status()
                     ->latest()
                     ->first();
-    
-                // Jika belum ada status atau status bukan 'Revisi', tidak boleh submit
-                if (!$latestStatus || $latestStatus->status !== 'Revisi') {
-                    return back()->with('error', 'Anda tidak dapat mengirim project baru. Tunggu project sebelumnya direvisi oleh mentor.');
+
+                // Jika belum ada status, status bukan 'Revisi', atau status 'Disetujui', tidak boleh submit
+                if (!$latestStatus || $latestStatus->status !== 'Revisi' || $latestStatus->status === 'Disetujui') {
+                    $message = $latestStatus && $latestStatus->status === 'Disetujui'
+                        ? 'Project kamu sudah disetujui oleh mentor. kamu tidak dapat mengirim project baru.'
+                        : 'kamu tidak dapat mengirim project baru. Tunggu project sebelumnya direvisi oleh mentor.';
+                    return back()->with('error', $message);
                 }
             }
-    
+
             $request->validate([
                 'nama_group' => 'required|string|max:255',
                 'sesi_kelas' => 'required|string',
@@ -98,23 +101,23 @@ class DashboardMenteController extends Controller
                 'mentorId' => 'required|array',
                 'mentorId.*' => 'exists:mentor_projects,id',
             ]);
-    
+
             DB::beginTransaction();
             // Upload thumbnail
             $thumbnailPath = null;
             if ($request->hasFile('thumbnail')) {
                 $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
             }
-            
+
             // Upload logo - Tambahkan kode untuk upload logo
             $logoPath = null;
             if ($request->hasFile('logo')) {
                 $logoPath = $request->file('logo')->store('logos', 'public');
             }
-    
+
             // Generate unique slug
             $slug = Str::slug($request->nama_product) . '-' . Str::random(5);
-    
+
             // Simpan project
             $project = Project::create([
                 'nama_group' => $request->nama_group,
@@ -131,10 +134,10 @@ class DashboardMenteController extends Controller
                 'userId' => Auth::user()->id,
                 'is_best' => false,
             ]);
-    
+
             // Simpan tech stack ke pivot table
             if ($request->filled('tech_ids')) {
-    
+
                 // Tambah ulang tech yang dipilih
                 foreach ($request->tech_ids as $techId) {
                     TechProject::create([
@@ -147,12 +150,12 @@ class DashboardMenteController extends Controller
             foreach ($request->nama ?? [] as $group => $namaArray) {
                 foreach ($namaArray as $index => $namaAnggota) {
                     if (empty($namaAnggota)) continue;
-    
+
                     $linkedIn = $request->linkedIn[$group][$index] ?? '';
                     $roleId = $request->roleId[$group][$index] ?? null;
-    
+
                     if (!$roleId) continue; // skip jika role tidak diisi
-    
+
                     Member::create([
                         'nama' => $namaAnggota,
                         'linkedIn' => $linkedIn,
@@ -161,14 +164,14 @@ class DashboardMenteController extends Controller
                     ]);
                 }
             }
-    
+
             foreach ($request->mentorId as $mentorId) {
                 DB::table('mentor_groups')->insert([
                     'projectId' => $project->id,
                     'mentorId' => $mentorId,
                 ]);
             }
-    
+
             DB::commit();
             return redirect()->route('dashboard.mente')->with('success', 'Project berhasil disimpan!');
         } catch (\Exception $e) {

@@ -70,7 +70,7 @@
                                         @for ($i = 0; $i < $techesPerColumn && $techIndex < $techCount; $i++)
                                             @php $tech = $project->Teches[$techIndex++]; @endphp
                                             <li class="d-flex align-items-center mb-2">
-                                                <img src="{{ asset('storage/public/icons/' . $tech->icon) }}" alt="{{ $tech->nama }}" 
+                                                <img src="{{ asset('storage/public/icons/' . $tech->icon) }}" alt="{{ $tech->nama }}"
                                                     class="me-2" width="24" height="24">
                                                 <span>{{ $tech->nama }}</span>
                                             </li>
@@ -88,7 +88,7 @@
                                 <div class="col-6">
                                     <div class="link-item d-flex align-items-center">
                                         <div class="me-3">
-                                            <img src="{{ asset('img/icons/android.svg') }}" alt="Android" width="30" height="30">
+                                            <img src="{{ asset('img/icons/android.svg') }}" alt="Android" width="24" height="24">
                                         </div>
                                         <a href="{{ $project->link_video }}" class="link-blue text-decoration-none" target="_blank" rel="noopener">Download Aplikasi
                                         </a>
@@ -101,7 +101,7 @@
                                 <div class="col-6">
                                     <div class="link-item d-flex align-items-center">
                                         <div class="me-3">
-                                            <img src="{{ asset('img/icons/figma.svg') }}" alt="Prototype" width="30" height="30">
+                                            <img src="{{ asset('img/icons/figma.svg') }}" alt="Prototype" width="24" height="24">
                                         </div>
                                         <a href="{{ $project->link_figma }}" class="link-blue text-decoration-none" target="_blank" rel="noopener">
                                             Link Prototype
@@ -114,7 +114,7 @@
                             @if($project->link_website)
                             <div class="link-item d-flex align-items-center">
                                 <div class="me-3">
-                                    <img src="{{ asset('img/icons/website.svg') }}" alt="Web" width="30" height="30">
+                                    <img src="{{ asset('img/icons/website.svg') }}" alt="Web" width="24" height="24">
                                 </div>
                                 <a href="{{ $project->link_website }}" class="link-blue text-decoration-none" target="_blank" rel="noopener">
                                     Link Website
@@ -125,21 +125,30 @@
                     </div>
                     <div class="rounded-container shadow-sm p-3">
                         <h5 class="mb-3">Tertarik Dengan Proyek Ini?</h5>
-                        <div class="row px-3 flex-column mb-3">
-                            <a href="{{ $project->link_website }}" class="link-blue" target="_blank"
-                                style="text-decoration:none" rel="noopener">Info@infinitelearning.id</a>
-                            <a href="{{ $project->link_figma }}" style="text-decoration:none" class="link-blue"
-                                target="_blank" rel="noopener">Infinite
-                                Learning Indonesia</a>
+                        <div class="link-item d-flex align-items-center">
+                            <div class="me-3">
+                                <img src="{{ asset('img/icons/mail.png') }}" alt="Prototype" width="24" height="24">
+                            </div>
+                            <a href="mailto:info@infinitelearning.id" class="link-blue text-decoration-none" target="_blank" rel="noopener">
+                                info@infinitelearning.id
+                            </a>
                         </div>
-                        <button class="btn btn-contact-admin text-white fw-bold d-block w-100 p-2"
-                            style="background: #7a4dff" data-bs-toggle="modal" data-bs-target="#modalSetujui">Hubungi
+                        <div class="link-item d-flex align-items-center">
+                            <div class="me-3">
+                                <img src="{{ asset('img/icons/linkedin.svg') }}" alt="Prototype" width="24" height="24">
+                            </div>
+                            <a href="https://www.linkedin.com/company/infinite-learning-indonesia" class="link-blue text-decoration-none" target="_blank" rel="noopener">
+                                Infinite Learning Indonesia
+                            </a>
+                        </div>
+                        <button class="btn text-white fw-bold w-100 p-2" style="background-color: #8A3DFF;"
+                            data-bs-toggle="modal" data-bs-target="#modalSetujui">Hubungi
                             Admin</button>
                     </div>
                 </div>
             </div>
 
-            
+
 
             <!-- Project description -->
             <section>
@@ -586,11 +595,11 @@
 
         .link-item a {
             font-weight: 500;
-            
+
             font-size: 14px;
         }
 
-        
+
 
         /* Responsive adjustments */
         @media (max-width: 767px) {
@@ -598,7 +607,7 @@
                 width: 60px;
                 height: 60px;
             }
-            
+
             .product-logo {
                 max-width: 45px;
                 max-height: 45px;

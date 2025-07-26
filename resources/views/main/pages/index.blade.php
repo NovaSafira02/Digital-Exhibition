@@ -20,6 +20,40 @@
     <section class="hero2 d-flex align-items-center">
         <div class="row">
             <div class="col">
+                <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
+            </div>
+            <div class="col">
+                <h1>Digital Exhibition</h1>
+                <p>Digital Exhibition adalah sebuah platform yang dirancang untuk para peserta program
+                    pelatihan mempresentasikan karya mereka dalam bentuk website. Platform ini menjadi wadah untuk
+                    menampilkan kreativitas serta kompetensi teknis yang telah mereka kembangkan selama mengikuti pelatihan.
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <div class="card" style="background: #FAFAFA; border: none;">
+                            <div class="card-body">
+                                <h5>Pembelajaran</h5>
+                                <p>Program pelatihan intensif yang dibimbing oleh mentor berpengalaman.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="background: #FAFAFA; border: none;">
+                            <div class="card-body">
+                                <h5>Exhibition</h5>
+                                <p>Pameran digital yang dirancang untuk menampilkan dan menyoroti proyek-proyek kreatif para
+                                    peserta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+<section class="hero2 d-flex align-items-center" style="background: #FAFAFA">
+        <div class="row">
+            <div class="col">
                 <h1>Digital Exhibition</h1>
                 <p>Digital Exhibition adalah sebuah platform yang dirancang untuk para peserta program
                     pelatihan mempresentasikan karya mereka dalam bentuk website. Platform ini menjadi wadah untuk
@@ -51,7 +85,7 @@
         </div>
     </section>
 
-    <section class="hero2 align-items-center p-5" style="background: #FAFAFA">
+    <section class="hero2 align-items-center p-5">
         <div class="row w-100">
             <div class="col">
                 <h1>Proyek Showcase</h1>
@@ -93,33 +127,31 @@
         </div>
     </section>
 
-    <section class="mb-5 pb-5">
+    <section class="py-5" style="background: #FAFAFA">
         <div class="container mb-5">
             <div class="logo-container">
                 <h2 class="mb-5 pb-5">Mitra Terbaik Kami</h2>
-                <img class="mx-5" src="https://www.pngkey.com/png/detail/201-2015918_red-hat-linux-logo-png-svg-red-hat.png"
-                    alt="Red Hat Logo PNG" height="60">
-                <img class="mx-5" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" height="60">
-                <img class="mx-5" src="https://upload.wikimedia.org/wikipedia/commons/5/51/RMIT_University_Logo.svg" alt="Red Hat"
-                    height="60" style="background-color: white; padding: 4px; border-radius: 4px;">
 
-                <img class="mx-5" src="https://kompaspedia.kompas.id/wp-content/uploads/2022/04/Logo-BI-format-PNG-1400x443.png"
-                    alt="Bank Indonesia" height="60" style="background-color:white; padding:4px; border-radius:4px;">
+                <img class="mx-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Coat_of_arms_of_Riau_Islands.svg/1200px-Coat_of_arms_of_Riau_Islands.svg.png"
+                    alt="Bank Indonesia" height="120" style="background-color:white; padding:4px; border-radius:4px;">
+
+                <img class="mx-5" src="https://upload.wikimedia.org/wikipedia/commons/3/39/BI_Logo.png"
+                    alt="Bank Indonesia" style="background-color:white; padding:4px; border-radius:4px;">
 
                 <!-- KOMINFO -->
                 <img class="mx-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Logo_of_Ministry_of_Communication_and_Information_Technology_of_the_Republic_of_Indonesia.svg/2060px-Logo_of_Ministry_of_Communication_and_Information_Technology_of_the_Republic_of_Indonesia.svg.png"
-                    alt="KOMINFO" height="60" style="background-color:white; padding:4px; border-radius:4px;">
+                    alt="KOMINFO" height="120" style="background-color:white; padding:4px; border-radius:4px;">
             </div>
         </div>
     </section>
 
-    <section class="here2 d-flex align-items-center mb-5 pb-5" style="background: #FAFAFA">
+    <section class="here2 d-flex align-items-center mb-5 pb-5">
         <div class="container text-center">
-            <h1 class="my-5">Testimoni Alumni</h1>
+            <h1 class="my-5">Video Testimoni Alumni</h1>
             <div class="row">
             <div class="col-12">
                 <div class="video-wrapper shadow rounded-3 mb-5" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                        <iframe src="{{ $project->link_video }}"
+                        <iframe src="https://drive.google.com/file/d/11z8VjRHDdmmP6WSCeTizM9HDZ8D1Htt0/preview"
                                 title="HidroTani Project Overview"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
@@ -128,7 +160,7 @@
                         </iframe>
                     </div>
                 </div>
-                
+
 
                 {{-- di bwah ini card testi alumni  --}}
                 {{-- <div class="col-md-4">
