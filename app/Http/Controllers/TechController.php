@@ -31,6 +31,28 @@ class TechController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    // public function store(Request $request)
+    // {
+    //     try {
+    //         $request->validate([
+    //             'name' => 'required|string|max:255',
+    //             'icon' => 'required|file|mimes:jpg,jpeg,png,svg|max:2048'
+    //         ]);
+
+    //         $path = $request->file('icon')->store('public/icons');
+
+    //         Tech::create([
+    //             'nama' => $request->name,
+    //             'icon' => basename($path)
+    //         ]);
+
+    //         return redirect()->back()->with('success', 'Tech berhasil ditambahkan.');
+    //     } catch (Exception $e) {
+    //         Log::error('Gagal menyimpan tech: ' . $e->getMessage());
+    //         return redirect()->back()->with('error', 'Terjadi kesalahan saat menambahkan tech.');
+    //     }
+    // }
+
     public function store(Request $request)
     {
         try {
@@ -39,11 +61,12 @@ class TechController extends Controller
                 'icon' => 'required|file|mimes:jpg,jpeg,png,svg|max:2048'
             ]);
 
-            $path = $request->file('icon')->store('public/icons');
+            // Simpan ke storage/app/public/icons
+            $path = $request->file('icon')->store('icons', 'public');
 
             Tech::create([
                 'nama' => $request->name,
-                'icon' => basename($path)
+                'icon' => $path, // simpan 'icons/namafile.jpg'
             ]);
 
             return redirect()->back()->with('success', 'Tech berhasil ditambahkan.');

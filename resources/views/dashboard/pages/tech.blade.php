@@ -40,8 +40,9 @@
                             <tr>
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $tech->nama }}</td>
-                                <td> <img src="{{ asset('storage/public/icons/' . $tech->icon) }}" alt=""
-                                        width="10%"></td>
+                                {{-- <td> <img src="{{ asset('storage/public/icons/' . $tech->icon) }}" alt="" width="10%"></td> --}}
+                                <td><img src="{{ asset('storage/' . $tech->icon) }}" alt="icon {{ $tech->nama }}" width="60"></td>
+
                                 <td>
                                     <button class="btn btn-warning p-2 me-2" data-bs-toggle="modal" style="background: rgba(76, 175, 80, 0.2)" data-bs-target="#edittechModal{{ $tech->id }}"><img src="{{ asset('img/icons/edit-icon.svg') }}" alt="Edit" width="32" height="32"></button>
                                     <form action="{{ route('tech.destroy', $tech->id) }}" method="POST" class="d-inline">
@@ -86,7 +87,7 @@
         @endforeach
 
         <!-- Modal Tambah -->
-        <div class="modal fade" id="tambahtechModal" tabindex="-1" aria-hidden="true">
+        {{-- <div class="modal fade" id="tambahtechModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <form action="{{ route('tech.store') }}" method="POST" enctype="multipart/form-data"
                     class="modal-content">
@@ -109,7 +110,33 @@
                         </div>
                 </form>
             </div>
+        </div> --}}
+        <div class="modal fade" id="tambahtechModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <form action="{{ route('tech.store') }}" method="POST" enctype="multipart/form-data" class="modal-content">
+                    @csrf
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tambah Tech</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label>Nama</label>
+                            <input type="text" name="name" class="form-control" required tabindex="1">
+                        </div>
+                        <div class="mb-3">
+                            <label>Icon</label>
+                            <input type="file" name="icon" class="form-control" required tabindex="2">
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" style="background: #8A3DFF">Tambah</button>
+                        </div>
+                </form>
+            </div>
         </div>
+
+</div>
+
     </div>
     <!-- Table -->
 @endsection
