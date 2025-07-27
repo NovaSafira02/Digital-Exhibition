@@ -20,7 +20,15 @@
     <section class="hero2 d-flex align-items-center">
         <div class="row">
             <div class="col">
-                <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
+            <div class="video-wrapper shadow rounded-3 mb-5" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                <iframe src="https://drive.google.com/file/d/11z8VjRHDdmmP6WSCeTizM9HDZ8D1Htt0/preview"
+                                title="Vidio Best Project"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                                allowfullscreen
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                        </iframe>
+                    </div>
             </div>
             <div class="col">
                 <h1>Digital Exhibition</h1>
