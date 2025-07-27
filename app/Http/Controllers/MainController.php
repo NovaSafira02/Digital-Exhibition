@@ -55,7 +55,9 @@ class MainController extends Controller
     public function showCase(Request $request)
     {
         $kategoriList = KategoriProject::select('nama')->distinct()->pluck('nama');
-        $batchList = KategoriProject::select('batch')->distinct()->pluck('batch');
+        $batchList = KategoriProject::select('batch')->distinct()->pluck('batch')->sortByDesc(function($batch) {
+            return (int)$batch;
+        })->values();
         // Ambil request filter
         $search = $request->input('search');
         $kategori = $request->input('kategori');

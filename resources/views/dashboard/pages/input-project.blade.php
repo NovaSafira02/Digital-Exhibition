@@ -197,20 +197,20 @@
                     </div>
 
                     <div class="mb-3">
-                        <h6 for="linkFigma">Preview Mobile</h6>
+                        <h6 for="linkFigma">Preview Android</h6>
                         <small class="text-muted d-block mb-1">Masukkan link apk Android.</small>
-                        <input type="url" id="linkFigma" class="form-control" placeholder="Masukkan link prototype"
+                        <input type="url" id="linkFigma" class="form-control" placeholder="Masukkan link preview Android"
                             name="link_figma" />
                     </div>
 
                     <div class="mb-3">
-                        <h6 for="linkGithub">Link Website/Github</h6>
+                        <h6 for="linkGithub">Link Preview Website/Prototype</h6>
                         <small class="text-muted d-block mb-1">Jika website kamu belum menggunakan hosting yang berbayar
                             atau
                             mempunyai nama domain resmi, kamu bisa menggunakan platform seperti <strong>Vercel</strong> atau
                             <strong>Netlify</strong> atau platform lain sejenisnya. kamu juga bisa menggunakan link
-                            github</small>
-                        <input type="url" id="linkGithub" class="form-control" placeholder="Masukkan link produk"
+                            prototype.</small>
+                        <input type="url" id="linkGithub" class="form-control" placeholder="Masukkan link preview website"
                             name="link_website" />
                     </div>
                 </div>

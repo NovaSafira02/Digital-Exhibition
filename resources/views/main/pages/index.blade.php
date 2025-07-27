@@ -5,11 +5,28 @@
         <div class="row">
             <div class="col">
                 <h1 class="text-dark">Digital Exhibition: Showcase Proyek Mentee Infinite Learning</h1>
-                <p>Menampilkan berbagai proyek inovatif karya para mentee dari beragam program pelatihan Infinite Learning. Tidak hanya terbatas pada pengembangan Aplikasi dan Website, pameran digital ini juga mencakup karya terbaik dari bidang Artificial Intelligence (AI), Game Development, Network Security, hingga Red Hat System Administration.
-                <br><br>
-                Jelajahi karya mereka, temukan inspirasi baru, dan dukung talenta digital masa depan!
+                <p class="mb-3">Proyek inovatif karya para mentee dari beragam program pelatihan Infinite Learning. Tidak hanya terbatas pada pengembangan Aplikasi dan Website, pameran digital ini juga mencakup karya terbaik dari bidang Artificial Intelligence (AI), Game Development, Network Security, hingga Red Hat System Administration.
                 </p>
-                <a href="/showcase" class="btn btn-custom rounded">Lihat Proyek Kami <img src="{{ asset('img/arrow-right.svg') }}" alt="panah kanan" class="ms-2" style="width: 1rem; height: 1rem;"></a>
+                <div class="row">
+                    <div class="col">
+                        <div class="card" style="background: #FAFAFA; border: none;">
+                            <div class="card-body">
+                                <h5>Pembelajaran</h5>
+                                <p class="mb-0">Program pelatihan intensif yang dibimbing oleh mentor berpengalaman.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="background: #FAFAFA; border: none;">
+                            <div class="card-body">
+                                <h5>Exhibition</h5>
+                                <p class="mb-0">Pameran digital yang dirancang untuk menampilkan dan menyoroti proyek-proyek kreatif para
+                                    peserta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/showcase" class="btn btn-custom rounded mt-3">Lihat Proyek Kami <img src="{{ asset('img/arrow-right.svg') }}" alt="panah kanan" class="ms-2" style="width: 1rem; height: 1rem;"></a>
             </div>
             <div class="col">
                 <img src="{{ asset('img/div.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
@@ -31,30 +48,11 @@
                     </div>
             </div>
             <div class="col">
-                <h1>Digital Exhibition</h1>
+                <h1>Video Showcase Best Project</h1>
                 <p>Digital Exhibition adalah sebuah platform yang dirancang untuk para peserta program
                     pelatihan mempresentasikan karya mereka dalam bentuk website. Platform ini menjadi wadah untuk
                     menampilkan kreativitas serta kompetensi teknis yang telah mereka kembangkan selama mengikuti pelatihan.
                 </p>
-                <div class="row">
-                    <div class="col">
-                        <div class="card" style="background: #FAFAFA; border: none;">
-                            <div class="card-body">
-                                <h5>Pembelajaran</h5>
-                                <p>Program pelatihan intensif yang dibimbing oleh mentor berpengalaman.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="background: #FAFAFA; border: none;">
-                            <div class="card-body">
-                                <h5>Exhibition</h5>
-                                <p>Pameran digital yang dirancang untuk menampilkan dan menyoroti proyek-proyek kreatif para
-                                    peserta.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -62,33 +60,22 @@
 <section class="hero2 d-flex align-items-center" style="background: #FAFAFA">
         <div class="row">
             <div class="col">
-                <h1>Digital Exhibition</h1>
+                <h1>Video Showcase Project All Program</h1>
                 <p>Digital Exhibition adalah sebuah platform yang dirancang untuk para peserta program
                     pelatihan mempresentasikan karya mereka dalam bentuk website. Platform ini menjadi wadah untuk
                     menampilkan kreativitas serta kompetensi teknis yang telah mereka kembangkan selama mengikuti pelatihan.
                 </p>
-                <div class="row">
-                    <div class="col">
-                        <div class="card" style="background: #FAFAFA; border: none;">
-                            <div class="card-body">
-                                <h5>Pembelajaran</h5>
-                                <p>Program pelatihan intensif yang dibimbing oleh mentor berpengalaman.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="background: #FAFAFA; border: none;">
-                            <div class="card-body">
-                                <h5>Exhibition</h5>
-                                <p>Pameran digital yang dirancang untuk menampilkan dan menyoroti proyek-proyek kreatif para
-                                    peserta.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="col">
-                <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
+                <div class="video-wrapper shadow rounded-3 mb-5" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                <iframe src="https://drive.google.com/file/d/11z8VjRHDdmmP6WSCeTizM9HDZ8D1Htt0/preview"
+                                title="Vidio Best Project"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                                allowfullscreen
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                        </iframe>
+                    </div>
             </div>
         </div>
     </section>

@@ -83,7 +83,7 @@
                         <h5 class="mb-3">Link Proyek</h5>
                         <div class="project-links">
                                 <!-- Link Aplikasi Mobile -->
-                                @if($project->link_video)
+                                {{-- @if($project->link_video)
                                 <div class="col-6">
                                     <div class="link-item d-flex align-items-center">
                                         <div class="me-3">
@@ -93,17 +93,17 @@
                                         </a>
                                     </div>
                                 </div>
-                                @endif
+                                @endif --}}
 
                                 <!-- Link Prototype Figma -->
                                 @if($project->link_figma)
                                 <div class="col-6">
                                     <div class="link-item d-flex align-items-center">
                                         <div class="me-3">
-                                            <img src="{{ asset('img/icons/figma.svg') }}" alt="Prototype" width="24" height="24">
+                                            <img src="{{ asset('img/icons/android.svg') }}" alt="Prototype" width="24" height="24">
                                         </div>
                                         <a href="{{ $project->link_figma }}" class="link-blue text-decoration-none" target="_blank" rel="noopener">
-                                            Link Prototype
+                                            Preview Android
                                         </a>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@
                                     <img src="{{ asset('img/icons/website.svg') }}" alt="Web" width="24" height="24">
                                 </div>
                                 <a href="{{ $project->link_website }}" class="link-blue text-decoration-none" target="_blank" rel="noopener">
-                                    Link Website
+                                    Preview Website
                                 </a>
                             </div>
                             @endif
