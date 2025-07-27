@@ -152,7 +152,7 @@
             <!-- Project description -->
             <section>
                 <h3 class="section-title">Deskripsi Project</h3>
-                <p class="text-justify fs-1">{!! $project->deskripsi !!}</p>
+                <div class="project-description text-justify">{!! $project->deskripsi !!}</div>
             </section>
 
 
@@ -301,6 +301,17 @@
 
         .fx-bold label {
             font-weight: 600;
+        }
+
+        .project-description {
+            font-size: 1rem;
+        }
+
+/* Pastikan semua elemen di dalam deskripsi juga memiliki font besar */
+        .project-description p, 
+        .project-description li, 
+        .project-description span {
+            font-size: 1rem !important;
         }
 
         .textarea-vertical-center {
