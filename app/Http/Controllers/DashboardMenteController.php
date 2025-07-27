@@ -97,7 +97,7 @@ class DashboardMenteController extends Controller
                 'tech_ids' => 'array',
                 'tech_ids.*' => 'exists:teches,id',
                 'thumbnail' => 'nullable|image|max:5120',
-                'logo' => 'nullable|image|max:2048', // Tambahkan validasi untuk logo
+                'logo' => 'nullable|image|max:5120', // Tambahkan validasi untuk logo
                 'mentorId' => 'required|array',
                 'mentorId.*' => 'exists:mentor_projects,id',
             ]);

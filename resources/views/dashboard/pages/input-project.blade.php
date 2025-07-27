@@ -197,8 +197,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <h6 for="linkFigma">Link Figma</h6>
-                        <small class="text-muted d-block mb-1">Masukkan Link figma Project .</small>
+                        <h6 for="linkFigma">Preview Mobile</h6>
+                        <small class="text-muted d-block mb-1">Masukkan link apk Android.</small>
                         <input type="url" id="linkFigma" class="form-control" placeholder="Masukkan link prototype"
                             name="link_figma" />
                     </div>
