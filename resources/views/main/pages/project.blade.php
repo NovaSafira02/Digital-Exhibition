@@ -70,8 +70,7 @@
                                         @for ($i = 0; $i < $techesPerColumn && $techIndex < $techCount; $i++)
                                             @php $tech = $project->Teches[$techIndex++]; @endphp
                                             <li class="d-flex align-items-center mb-2">
-                                                <img src="{{ asset('storage/public/icons/' . $tech->icon) }}" alt="{{ $tech->nama }}"
-                                                    class="me-2" width="24" height="24">
+                                                <img src="{{ asset('storage/' . $tech->icon) }}" alt="{{ $tech->nama }}" class="me-2" width="24" height="24">
                                                 <span>{{ $tech->nama }}</span>
                                             </li>
                                         @endfor
