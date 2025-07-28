@@ -14,16 +14,25 @@
         <select name="kategori" class="form-select" onchange="this.form.submit()">
             <option value="">Pilih Kategori Produk</option>
             @foreach ($kategoriList as $item)
-                <option value="{{ $item }}" {{ request('kategori') == $item ? 'selected' : '' }}>
-                    {{ $item }}</option>
+                @if (in_array($item, [
+                    'Merge Collab (Mobile & Web & AI)', 
+                    'Collab (Web & AI)', 
+                    'Collab (Mobile & AI)', 
+                    'Network Security'
+                ]))
+                    <option value="{{ $item }}" {{ request('kategori') == $item ? 'selected' : '' }}>
+                        {{ $item }}</option>
+                @endif
             @endforeach
         </select>
 
         <select name="batch" class="form-select" onchange="this.form.submit()">
             <option value="">Pilih Batch Mentee</option>
             @foreach ($batchList as $item)
-                <option value="{{ $item }}" {{ request('batch') == $item ? 'selected' : '' }}>Batch
-                    {{ $item }}</option>
+                @if ($item == '8')
+                    <option value="{{ $item }}" {{ request('batch') == $item ? 'selected' : '' }}>Batch
+                        {{ $item }}</option>
+                @endif
             @endforeach
         </select>
 
