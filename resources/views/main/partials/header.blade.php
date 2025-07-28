@@ -16,7 +16,8 @@
                     <a class="nav-link {{ request()->is('tentang') ? 'active' : '' }}" href="/tentang" style="{{ request()->is('tentang') ? 'padding: 0.6rem; background-color: rgba(138, 61, 255, 0.1) !important; color: #8A3DFF !important; font-weight: bold !important;' : '' }}">Tentang</a>
                 </li>
             </ul>
-            <a class="btn-custom rounded" href="{{ route('login') }}">Masuk</a>
+            <a class="btn-custom rounded" href="#">Masuk</a>
+            {{-- <a class="btn-custom rounded" href="{{ route('login') }}">Masuk</a> --}}
         </div>
     </div>
 </nav>

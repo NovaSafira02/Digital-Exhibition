@@ -36,12 +36,12 @@
         </div>
     </div>
 
-    <section class="hero2 d-flex align-items-center">
+    <section class="hero2 d-flex align-items-center" style="background: #FAFAFA;">
         <div class="container">
             <div class="row gy-4">
                 <div class="col-lg-6 col-md-12 order-lg-1 order-2">
                     <div class="video-wrapper shadow rounded-3 mb-3" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                        <iframe src="https://drive.google.com/file/d/11z8VjRHDdmmP6WSCeTizM9HDZ8D1Htt0/preview"
+                        <iframe src="https://drive.google.com/file/d/1OWj-Bap27qSSF1lQNO2CxWAQwVY8GKQK/preview"
                                 title="Video Best Project"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
@@ -51,33 +51,10 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 order-lg-2 order-1">
-                    <h1 class="fs-2 fs-lg-1">Video Showcase Best Project</h1>
+                    <h1 class="fs-2 fs-lg-1">Video Showcase Best Product All Program</h1>
                     <p><b>Video showcase Best Project</b> menampilkan proyek-proyek terbaik yang telah dipilih berdasarkan kreativitas, inovasi, dan kualitas teknis yang unggul. Wawasan mendalam mengenai perjalanan mentee dalam mengembangkan solusi digital yang relevan dan berdampak nyata.
-Proyek-proyek ini tidak hanya mencerminkan keterampilan teknis yang tinggi, tetapi juga kemampuan mentee dalam menerjemahkan ide menjadi solusi nyata yang dapat membawa perubahan positif dalam industri digital.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="hero2 d-flex align-items-center" style="background: #FAFAFA">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-lg-6 col-md-12">
-                    <h1 class="fs-2 fs-lg-1">Video Showcase Project All Program</h1>
-                    <p><b>Video showcase Project All Program</b> menampilkan berbagai proyek yang dikembangkan oleh mentee dari seluruh program di Infinite Learning. Setiap karya menunjukkan beragam pendekatan kreatif, inovasi, dan pemecahan masalah yang diterapkan dalam solusi digital yang relevan.
-Terlihat bagaimana para mentee memanfaatkan keterampilan teknis dan pemikiran strategis untuk menciptakan proyek yang memecahkan tantangan dunia nyata. Dari desain website, aplikasi, kecerdasan buatan, keamanan jaringan hingga game interaktif, showcase ini memperlihatkan keragaman ide dan hasil yang telah dicapai, serta perjalanan setiap mentee dalam mengembangkan potensi mereka di dunia digital.
-                    </p>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="video-wrapper shadow rounded-3 mb-3" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                        <iframe src="https://drive.google.com/file/d/11z8VjRHDdmmP6WSCeTizM9HDZ8D1Htt0/preview"
-                                title="Video All Project"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                                allowfullscreen
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                        </iframe>
-                    </div>
+Proyek-proyek ini tidak hanya mencerminkan keterampilan teknis yang tinggi, tetapi juga kemampuan mentee dalam menerjemahkan ide menjadi solusi nyata yang dapat membawa perubahan positif dalam industri digital.</p> <b>Video showcase Project All Program</b> menampilkan berbagai proyek yang dikembangkan oleh mentee dari seluruh program di Infinite Learning. Setiap karya menunjukkan beragam pendekatan kreatif, inovasi, dan pemecahan masalah yang diterapkan dalam solusi digital yang relevan.
+Terlihat bagaimana para mentee memanfaatkan keterampilan teknis dan pemikiran strategis untuk menciptakan proyek yang memecahkan tantangan dunia nyata.
                 </div>
             </div>
         </div>
@@ -127,7 +104,7 @@ Terlihat bagaimana para mentee memanfaatkan keterampilan teknis dan pemikiran st
         </div>
     </section>
 
-    <section class="py-5" style="background: #FAFAFA">
+    <section class="py-5">
         <div class="container mb-5">
             <div class="logo-container">
                 <h2 class="mb-4 text-center">Mitra Terbaik Kami</h2>
@@ -149,7 +126,7 @@ Terlihat bagaimana para mentee memanfaatkan keterampilan teknis dan pemikiran st
         </div>
     </section>
 
-    <section class="py-5">
+    <section class="py-5" style="background: #FAFAFA">
         <div class="container text-center">
             <h1 class="my-4 fs-2">Video Testimoni Alumni</h1>
             <div class="row justify-content-center">
