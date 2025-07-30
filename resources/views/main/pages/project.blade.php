@@ -213,8 +213,8 @@
         }
 
         /* Pastikan semua elemen di dalam deskripsi juga memiliki font yang sesuai */
-        .project-description p,
-        .project-description li,
+        .project-description p, 
+        .project-description li, 
         .project-description span,
         .project-description div,
         .project-description h1,

@@ -16,7 +16,7 @@
                     <a class="nav-link {{ request()->is('tentang') ? 'active' : '' }}" href="/tentang">Tentang</a>
                 </li>
             </ul>
-            <a class="btn-custom rounded" href="#">Masuk</a>
+            <a class="btn-custom rounded" href="{{ route('login') }}">Masuk</a>
         </div>
     </div>
 </nav>

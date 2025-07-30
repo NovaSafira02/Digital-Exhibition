@@ -1,7 +1,6 @@
 @extends('main.partials.main')
 
 @section('content')
-    <div id="content">
     <div class="container py-5">
         <header class="mb-4 d-flex flex-column flex-md-row align-items-center gap-3">
     {{-- Kolom kiri: Judul --}}
@@ -15,15 +14,8 @@
         <select name="kategori" class="form-select" onchange="this.form.submit()">
             <option value="">Pilih Kategori Produk</option>
             @foreach ($kategoriList as $item)
-                @if (in_array($item, [
-                    'Merge Collab (Mobile & Web & AI)',
-                    'Collab (Web & AI)',
-                    'Collab (Mobile & AI)',
-                    'Network Security'
-                ]))
-                    <option value="{{ $item }}" {{ request('kategori') == $item ? 'selected' : '' }}>
-                        {{ $item }}</option>
-                @endif
+                <option value="{{ $item }}" {{ request('kategori') == $item ? 'selected' : '' }}>
+                    {{ $item }}</option>
             @endforeach
         </select>
 
@@ -111,7 +103,7 @@
             </div>
         @endif
 
-    </div>
+
     </div>
 @endsection
 
@@ -134,22 +126,6 @@
 
 @section('css')
     <style>
-        /* Tambahkan CSS ini di bagian atas */
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        #content {
-            flex: 1 0 auto;
-        }
-
-        footer {
-            flex-shrink: 0;
-        }
-
-        /* CSS yang sudah ada tetap sama */
         .navbar-custom {
             background-color: white;
         }
