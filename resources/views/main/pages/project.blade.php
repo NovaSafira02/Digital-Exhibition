@@ -213,8 +213,8 @@
         }
 
         /* Pastikan semua elemen di dalam deskripsi juga memiliki font yang sesuai */
-        .project-description p, 
-        .project-description li, 
+        .project-description p,
+        .project-description li,
         .project-description span,
         .project-description div,
         .project-description h1,
@@ -547,17 +547,17 @@
                 max-width: 55px;
                 max-height: 55px;
             }
-            
+
             .team-member .icon-circle {
                 height: 40px;
                 width: 40px;
                 font-size: 1.1rem;
             }
-            
+
             .team-member .name {
                 font-size: 1rem;
             }
-            
+
             .link-item a {
                 font-size: 1rem;
             }
@@ -580,11 +580,11 @@
             .card-outer {
                 padding: 0.5rem;
             }
-            
+
             h1 {
                 font-size: 1.5rem;
             }
-            
+
             .section-title {
                 font-size: 1.2rem;
                 margin-top: 2rem;

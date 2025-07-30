@@ -52,7 +52,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Program Section Template -->
     <section class="hero2 d-flex align-items-center py-4 py-md-5">
         <div class="container">
@@ -70,7 +70,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="hero2 d-flex align-items-center py-4 py-md-5" style="background: #fafafa">
         <div class="container">
             <div class="row gy-4 align-items-center">
@@ -308,54 +308,54 @@
             margin: 0 10px;
             color: #fff;
         }
-        
+
         /* Media Queries untuk Responsivitas */
         @media (max-width: 767.98px) {
             .hero, .hero2 {
                 padding: 2rem 0.75rem;
                 min-height: auto;
             }
-            
+
             .hero h1, .hero2 h1 {
                 font-size: 1.75rem;
             }
-            
+
             .hero p, .hero2 p {
                 font-size: 0.95rem;
             }
-            
+
             .nav-link {
                 margin: 0.25rem 0.5rem;
             }
-            
+
             .nav-link.active {
                 padding: 0.3rem 1rem;
             }
-            
+
             .btn-custom {
                 padding: 0.4rem 1rem;
                 font-size: 0.9rem;
             }
-            
+
             .logo-container img {
                 max-width: 100px;
                 margin: 0 5px 10px;
             }
         }
-        
+
         @media (max-width: 575.98px) {
             .hero h1, .hero2 h1 {
                 font-size: 1.5rem;
             }
-            
+
             .hero p, .hero2 p {
                 font-size: 0.9rem;
             }
-            
+
             .card-body h5 {
                 font-size: 1.1rem;
             }
-            
+
             .card-body p {
                 font-size: 0.85rem;
             }

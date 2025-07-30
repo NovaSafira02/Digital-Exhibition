@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    <section class="hero2 d-flex align-items-center" style="background: #FAFAFA;">
+    <section class="hero2 d-flex align-items-center">
         <div class="container">
             <div class="row gy-4">
                 <div class="col-lg-6 col-md-12 order-lg-1 order-2">
@@ -60,7 +60,7 @@ Terlihat bagaimana para mentee memanfaatkan keterampilan teknis dan pemikiran st
         </div>
     </section>
 
-    <section class="py-5">
+    <section class="py-5" style="background: #FAFAFA">
         <div class="container">
             <div class="row w-100 mb-4">
                 <div class="col-md-6">
@@ -315,7 +315,7 @@ Terlihat bagaimana para mentee memanfaatkan keterampilan teknis dan pemikiran st
             margin: 0 10px;
             color: #fff;
         }
-        
+
         .card {
             background-color: #fff;
             color: #000;
