@@ -70,54 +70,74 @@ class DashboardMenteController extends Controller
             $existingProject = Project::where('userId', Auth::user()->id)
                 ->latest()
                 ->first();
-
+    
             if ($existingProject) {
                 // Cek status terakhir project
                 $latestStatus = $existingProject->Status()
                     ->latest()
                     ->first();
-
+    
                 // Jika belum ada status, status bukan 'Revisi', atau status 'Disetujui', tidak boleh submit
                 if (!$latestStatus || $latestStatus->status !== 'Revisi' || $latestStatus->status === 'Disetujui') {
                     $message = $latestStatus && $latestStatus->status === 'Disetujui'
                         ? 'Project kamu sudah disetujui oleh mentor. kamu tidak dapat mengirim project baru.'
                         : 'kamu tidak dapat mengirim project baru. Tunggu project sebelumnya direvisi oleh mentor.';
-                    return back()->with('error', $message);
+                    return back()->withInput()->with('error', $message);
                 }
             }
-
-            $request->validate([
+    
+            // Validasi form dengan pesan error yang lebih user-friendly
+            $validator = Validator($request->all(), [
                 'nama_group' => 'required|string|max:255',
                 'sesi_kelas' => 'required|string',
                 'nama_product' => 'required|string|max:255',
                 'deskripsi' => 'required|string',
                 'link_video' => 'required|url',
-                'link_figma' => 'required|url',
+                'link_figma' => 'nullable|url', // Link Android preview boleh kosong
                 'link_website' => 'required|url',
-                'tech_ids' => 'array',
+                'tech_ids' => 'required|array',
                 'tech_ids.*' => 'exists:teches,id',
-                'thumbnail' => 'nullable|image|max:5120',
-                'logo' => 'nullable|image|max:5120', // Tambahkan validasi untuk logo
+                'thumbnail' => 'required|image|max:5120',
+                'logo' => 'required|image|max:5120',
                 'mentorId' => 'required|array',
                 'mentorId.*' => 'exists:mentor_projects,id',
+                // Validasi untuk anggota tim
+                'nama.*.*' => 'required|string',
+                'linkedIn.*.*' => 'required|url',
+                'roleId.*.*' => 'required|exists:member_masters,id',
+            ], [
+                'required' => 'Field ini harus diisi',
+                'url' => 'Format URL tidak valid',
+                'image' => 'File harus berupa gambar',
+                'max' => 'Ukuran file maksimal :max KB',
+                'exists' => 'Pilihan tidak valid',
+                'nama.*.*.required' => 'Nama anggota harus diisi',
+                'linkedIn.*.*.required' => 'LinkedIn anggota harus diisi',
+                'roleId.*.*.required' => 'Role anggota harus dipilih',
+                'tech_ids.required' => 'Pilih minimal satu teknologi',
             ]);
-
+    
+            if ($validator->fails()) {
+                return back()->withErrors($validator)->withInput();
+            }
+    
+            // Proses penyimpanan data jika validasi berhasil
             DB::beginTransaction();
             // Upload thumbnail
             $thumbnailPath = null;
             if ($request->hasFile('thumbnail')) {
                 $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
             }
-
-            // Upload logo - Tambahkan kode untuk upload logo
+    
+            // Upload logo
             $logoPath = null;
             if ($request->hasFile('logo')) {
                 $logoPath = $request->file('logo')->store('logos', 'public');
             }
-
+    
             // Generate unique slug
             $slug = Str::slug($request->nama_product) . '-' . Str::random(5);
-
+    
             // Simpan project
             $project = Project::create([
                 'nama_group' => $request->nama_group,
@@ -126,7 +146,7 @@ class DashboardMenteController extends Controller
                 'nama_product' => $request->nama_product,
                 'deskripsi' => $request->deskripsi,
                 'thumbnail' => $thumbnailPath,
-                'logo' => $logoPath, // Tambahkan field logo
+                'logo' => $logoPath,
                 'slug' => $slug,
                 'link_video' => $request->link_video,
                 'link_figma' => $request->link_figma,
@@ -134,10 +154,9 @@ class DashboardMenteController extends Controller
                 'userId' => Auth::user()->id,
                 'is_best' => false,
             ]);
-
+    
             // Simpan tech stack ke pivot table
             if ($request->filled('tech_ids')) {
-
                 // Tambah ulang tech yang dipilih
                 foreach ($request->tech_ids as $techId) {
                     TechProject::create([
@@ -146,6 +165,7 @@ class DashboardMenteController extends Controller
                     ]);
                 }
             }
+            
             // Simpan anggota dari semua grup
             foreach ($request->nama ?? [] as $group => $namaArray) {
                 foreach ($namaArray as $index => $namaAnggota) {
@@ -181,7 +201,7 @@ class DashboardMenteController extends Controller
                 'line' => $e->getLine(),
                 'trace' => $e->getTraceAsString()
             ]);
-            return back()->withInput()->with('error', 'Terjadi kesalahan saat menyimpan project. Silakan coba lagi.' . $e);
+            return back()->withInput()->with('error', 'Terjadi kesalahan saat menyimpan project. Silakan coba lagi.');
         }
     }
 

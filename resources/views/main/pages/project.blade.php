@@ -186,13 +186,88 @@
                 </section>
             @endforeach
         </div>
+        
+<div class="modal fade" id="modalSetujui" tabindex="-1" aria-labelledby="modalSetujuiLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content p-3" style="border-radius: 32px">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="diskusiModalLabel">Hubungi Admin untuk Diskusi Lebih Lanjut</h5>
 
-        <!-- Modal tidak diubah karena sudah cukup responsif -->
-        <div class="modal fade" id="modalSetujui" tabindex="-1" aria-labelledby="modalSetujuiLabel" aria-hidden="true">
-            <!-- ... kode modal tetap sama ... -->
+                    </div>
+                    <form action="{{ route('pesan.store') }}" method="POST">
+                        @csrf
+                        <div class="modal-body">
+                            <p>Anda dapat mengisi bagian ini jika tertarik untuk mengetahui lebih lanjut atau ingin
+                                mendiskusikan produk ini lebih jauh.</p>
+
+                            <div class="fx-bold">
+                                <div class="form-group mb-3">
+                                    <label for="type_pesan">Apa Topik Yang Ingin Anda Diskusikan?</label>
+                                    <select class="form-select" name="type_pesan" id="type_pesan" required>
+                                        <option value="">Pilih opsi diskusi</option>
+                                        <option value="Saya tertarik untuk merekrut anggota tim">Saya tertarik untuk
+                                            merekrut
+                                            anggota tim</option>
+                                        <option value="Saya ingin berinvestasi">Saya ingin berinvestasi</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="nama_investor">Nama</label>
+                                    <input type="text" class="form-control" name="nama_investor" id="nama_investor"
+                                        placeholder="Masukkan nama anda" required>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="instansi">Nama Industri</label>
+                                    <input type="text" class="form-control" name="instansi" id="instansi"
+                                        placeholder="Masukkan nama industri" required>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="email">Email/No.Telepon</label>
+                                    <input type="text" class="form-control" name="email" id="email"
+                                        placeholder="Masukkan email/No. Telepon" required>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="alamat_instansi">Alamat Perusahaan</label>
+                                    <input type="text" class="form-control" name="alamat_instansi"
+                                        id="alamat_instansi" placeholder="Masukkan alamat perusahaan" required>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="pesan">Pesan</label>
+                                    <textarea class="form-control textarea-vertical-center" name="pesan" id="pesan" rows="3"
+                                        placeholder="Tuliskan pesan" required></textarea>
+                                </div>
+
+                            </div>
+
+                            <h6 class="modal-title fw-bold">Apakah Kamu Yakin Ingin Mengirim Pesan Ini?</h6>
+                            <p>Pesan ini akan dikirimkan kepada admin. Anda akan dihubungi melalui informasi kontak yang
+                                telah Anda berikan. Pastikan semua informasi yang dimasukkan sudah benar dan akurat.</p>
+                            <div class="form-group mb-3 form-check">
+
+                                <input type="checkbox" class="form-check-input" id="confirm" required>
+                                <label class="form-check-label" for="confirm">Ya, data sudah benar</label>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-custom-cancel rounded"
+                                data-bs-dismiss="modal">Batal</button>
+                            <button type="submit" class="btn btn-custom rounded">Kirim</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
+
+
 
 @section('css')
     <style>
