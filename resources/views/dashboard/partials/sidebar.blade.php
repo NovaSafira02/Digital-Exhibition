@@ -24,7 +24,7 @@
                  @if (auth()->user()->isAdmin == 1)
                      Head Program
                  @elseif (auth()->user()->MentorProject != null)
-                     Mentor Infinite Learning
+                     {{ auth()->user()->MentorProject->Kategori->nama }}
                  @else
                      {{ auth()->user()->Mentee->Kategori->nama }}
                  @endif
@@ -51,7 +51,7 @@
                              style="background: {{ Request::is('dashboard/proyek-mentee*') ? '#6f42c1' : '#b28be9' }}">
                              <i class="fa-solid fa-file fs-6"></i>
                          </div>
-                         <span class="nav-link-text ms-1">Proyek Mentee</span>
+                         <span class="nav-link-text ms-1">Arsip Proyek Mentee</span>
                      </a>
                  </li>
                  <li class="nav-item">
@@ -141,7 +141,7 @@
                              style="background: {{ Request::is('dashboard/arsip-proyek*') ? '#6f42c1' : '#b28be9' }}">
                              <i class="fa-solid fa-box-archive fs-6"></i>
                          </div>
-                         <span class="nav-link-text ms-1">Arsip Proyek</span>
+                         <span class="nav-link-text ms-1">Proyek Mentee</span>
                      </a>
                  </li>
              @else

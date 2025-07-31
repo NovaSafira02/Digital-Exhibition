@@ -127,7 +127,7 @@
         <div class="login-form">
             <h2>Selamat Datang</h2>
             <div class="row">
-                <div class="col-sm-6 col-md">
+                <div class="col-sm-6 col-md small">
                     @if (session()->has('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             {{ session('success') }}

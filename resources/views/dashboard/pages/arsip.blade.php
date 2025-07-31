@@ -20,7 +20,7 @@
 
         <div class="card">
             <div class="card-body">
-                <h5 class="mb-4">Daftar Arsip Project Mentee</h5>
+                <h5 class="mb-4">Daftar Project Mentee "{{ auth()->user()->MentorProject->Kategori->nama }}"</h5>
                 <table class="table table-striped w-100" id="myTable">
                     <thead>
                         <tr>

@@ -5,23 +5,32 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Models\Status;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardMentorController extends Controller
 {
-    // public function index()
-    // {
-    //     $pages = "Dashboard Mentor";
-    //     $projects = Project::with('kategori')->get(); // relasi ke tabel kategori_projects
-    //     return view('dashboard.pages.index-mentor', compact('projects', 'pages'));
-    // }
-
     public function index()
     {
         $pages = "Dashboard Mentor";
+        
+        // Ambil user yang sedang login
+        $user = Auth::user();
+        
+        // Ambil kategori dari mentor yang login
+        $mentorKategoriId = $user->MentorProject->kategoriId ?? null;
+        
         // Modifikasi query untuk hanya menampilkan proyek yang belum ditinjau
-        $projects = Project::with('kategori')
-            ->whereDoesntHave('Status')
-            ->get(); // hanya menampilkan proyek yang belum memiliki status
+        // dan memiliki kategori yang sesuai dengan kategori mentor
+        if ($mentorKategoriId) {
+            $projects = Project::with('kategori')
+                ->whereDoesntHave('Status')
+                ->where('kategoriId', $mentorKategoriId)
+                ->get();
+        } else {
+            // Fallback jika tidak ada kategori (seharusnya tidak terjadi)
+            $projects = collect();
+        }
+            
         return view('dashboard.pages.index-mentor', compact('projects', 'pages'));
     }
 
