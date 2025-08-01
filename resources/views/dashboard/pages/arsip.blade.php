@@ -82,8 +82,8 @@
                             @if ($project->is_best == 1)
                                 <img src="{{ asset('img/label-card.png') }}"
                                     alt="Best Project Label"
-                                    class="position-absolute top-0 end-0 m-3"
-                                    style="width: 260px; z-index: 10;">
+                                    class="position-absolute top-5 end-3 m-3"
+                                    style="width: 200px; z-index: 10;">
                             @endif
                                 <img src="{{ asset('storage/' . $project->thumbnail) }}" class="img-fluid img-card"
                                     alt="Thumbnail Project" />

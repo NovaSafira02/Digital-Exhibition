@@ -6,7 +6,7 @@
             <div class="row gy-4">
                 <div class="col-lg-6 col-md-12">
                     <h1 class="text-dark">Digital Exhibition: Showcase Proyek Mentee Infinite Learning</h1>
-                    <p class="mb-3">Proyek inovatif karya para mentee dari beragam program pelatihan Infinite Learning. Tidak hanya terbatas pada pengembangan Aplikasi dan Website, pameran digital ini juga mencakup karya terbaik dari bidang Artificial Intelligence (AI), Game Development, Network Security, hingga Red Hat System Administration.
+                    <p class="mb-3 text-justify">Proyek inovatif karya para mentee dari beragam program pelatihan Infinite Learning. Tidak hanya terbatas pada pengembangan Aplikasi dan Website, pameran digital ini juga mencakup karya terbaik dari bidang Artificial Intelligence (AI), Game Development, Network Security, hingga Red Hat System Administration.
                     </p>
                     <div class="row gy-3">
                         <div class="col-md-6 col-sm-12">
@@ -52,9 +52,10 @@
                 </div>
                 <div class="col-lg-6 col-md-12 order-lg-2 order-1">
                     <h1 class="fs-2 fs-lg-1">Video Showcase Best Product All Program</h1>
-                    <p><b>Video showcase Best Project</b> menampilkan proyek-proyek terbaik yang telah dipilih berdasarkan kreativitas, inovasi, dan kualitas teknis yang unggul. Wawasan mendalam mengenai perjalanan mentee dalam mengembangkan solusi digital yang relevan dan berdampak nyata.
-Proyek-proyek ini tidak hanya mencerminkan keterampilan teknis yang tinggi, tetapi juga kemampuan mentee dalam menerjemahkan ide menjadi solusi nyata yang dapat membawa perubahan positif dalam industri digital.</p> <b>Video showcase Project All Program</b> menampilkan berbagai proyek yang dikembangkan oleh mentee dari seluruh program di Infinite Learning. Setiap karya menunjukkan beragam pendekatan kreatif, inovasi, dan pemecahan masalah yang diterapkan dalam solusi digital yang relevan.
-Terlihat bagaimana para mentee memanfaatkan keterampilan teknis dan pemikiran strategis untuk menciptakan proyek yang memecahkan tantangan dunia nyata.
+                    <p class="text-justify"><b>Video showcase Best Project</b> menampilkan proyek-proyek terbaik yang telah dipilih berdasarkan kreativitas, inovasi, dan kualitas teknis yang unggul. Wawasan mendalam mengenai perjalanan mentee dalam mengembangkan solusi digital yang relevan dan berdampak nyata.
+Proyek-proyek ini tidak hanya mencerminkan keterampilan teknis yang tinggi, tetapi juga kemampuan mentee dalam menerjemahkan ide menjadi solusi nyata yang dapat membawa perubahan positif dalam industri digital.</p>
+<p class="text-justify"><b>Video showcase Project All Program</b> menampilkan berbagai proyek yang dikembangkan oleh mentee dari seluruh program di Infinite Learning. Setiap karya menunjukkan beragam pendekatan kreatif, inovasi, dan pemecahan masalah yang diterapkan dalam solusi digital yang relevan.
+Terlihat bagaimana para mentee memanfaatkan keterampilan teknis dan pemikiran strategis untuk menciptakan proyek yang memecahkan tantangan dunia nyata.</p>
                 </div>
             </div>
         </div>
@@ -179,6 +180,10 @@ Terlihat bagaimana para mentee memanfaatkan keterampilan teknis dan pemikiran st
                 margin-bottom: 1rem;
             }
         }
+
+        .text-justify {
+    text-align: justify;
+  }
 
         .nav-link.active {
             color: #fff !important;

@@ -94,7 +94,7 @@
                                     @foreach ($kategoris as $kategori)
                                         <option value="{{ $kategori->id }}"
                                             {{ $kategori->id == $mentee->kategoriId ? 'selected' : '' }}>
-                                            {{ $kategori->nama }}
+                                            {{ $kategori->nama }} (Batch {{ $kategori->batch }})
                                         </option>
                                     @endforeach
                                 </select>

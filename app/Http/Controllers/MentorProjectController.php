@@ -104,11 +104,61 @@ class MentorProjectController extends Controller
             // Ambil MentorProject yang dipilih
             $mentorProject = MentorProject::findOrFail($id);
             $userId = $mentorProject->userId;
-            $kategoriId = $request->kategoriId;
-
-            // Hapus semua mentor lama untuk user & kategori tersebut
+            $oldKategoriId = $mentorProject->kategoriId;
+            $newKategoriId = $request->kategoriId;
+            
+            // Dapatkan semua ID mentor_projects yang akan diupdate
+            $existingMentorProjects = MentorProject::where('userId', $userId)
+                ->where('kategoriId', $oldKategoriId)
+                ->get();
+                
+            // Periksa apakah ada mentor_projects yang digunakan di mentor_groups
+            foreach ($existingMentorProjects as $mp) {
+                if ($mp->MentorGroup()->count() > 0) {
+                    // Update relasi di mentor_groups ke mentor_project baru yang akan dibuat
+                    // Kita perlu membuat mentor_project baru terlebih dahulu
+                    $newMentorProject = null;
+                    foreach ($request->mentorId as $mentorId) {
+                        $newMentorProject = MentorProject::create([
+                            'userId'     => $userId,
+                            'mentorId'   => $mentorId,
+                            'kategoriId' => $newKategoriId,
+                        ]);
+                        break; // Cukup buat satu untuk memindahkan relasi
+                    }
+                    
+                    // Pindahkan semua relasi mentor_groups ke mentor_project baru
+                    if ($newMentorProject) {
+                        foreach ($mp->MentorGroup as $mentorGroup) {
+                            $mentorGroup->mentorId = $newMentorProject->id;
+                            $mentorGroup->save();
+                        }
+                    }
+                    
+                    // Sekarang kita bisa menghapus mentor_project lama
+                    $mp->delete();
+                    
+                    // Buat mentor_project untuk mentor lainnya
+                    $skipFirst = true;
+                    foreach ($request->mentorId as $mentorId) {
+                        if ($skipFirst) {
+                            $skipFirst = false;
+                            continue; // Skip yang pertama karena sudah dibuat
+                        }
+                        MentorProject::create([
+                            'userId'     => $userId,
+                            'mentorId'   => $mentorId,
+                            'kategoriId' => $newKategoriId,
+                        ]);
+                    }
+                    
+                    return redirect()->back()->with('success', 'Asesmen berhasil diperbarui.');
+                }
+            }
+            
+            // Jika tidak ada relasi di mentor_groups, kita bisa langsung hapus dan buat baru
             MentorProject::where('userId', $userId)
-                ->where('kategoriId', $mentorProject->kategoriId)
+                ->where('kategoriId', $oldKategoriId)
                 ->delete();
 
             // Simpan mentor baru
@@ -116,7 +166,7 @@ class MentorProjectController extends Controller
                 MentorProject::create([
                     'userId'     => $userId,
                     'mentorId'   => $mentorId,
-                    'kategoriId' => $kategoriId,
+                    'kategoriId' => $newKategoriId,
                 ]);
             }
 
@@ -145,7 +195,7 @@ class MentorProjectController extends Controller
             // Hapus user-nya juga
             User::find($userId)?->delete();
 
-            return redirect()->back()->with('success', 'Semua asesmen dan user berhasil dihapus.');
+            return redirect()->back()->with('success', 'Akun Mentor berhasil dihapus.');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Gagal menghapus asesmen: ' . $e->getMessage());
         }

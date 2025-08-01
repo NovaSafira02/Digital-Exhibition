@@ -23,7 +23,7 @@
                     <img src="{{ asset('img/label-card.png') }}"
                         alt="Best Project Label"
                         class="position-absolute top-0 end-0 m-2 m-md-3"
-                        style="width: 120px; max-width: 30%; z-index: 10;">
+                        style="width: 200px; z-index: 10;">
                 @endif
                 <img src="{{ asset('storage/' . $project->thumbnail) }}" class="img-fluid img-card"
                     alt="{{ $project->nama_product }}" />

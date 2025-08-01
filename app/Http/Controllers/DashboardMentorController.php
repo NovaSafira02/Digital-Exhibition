@@ -16,8 +16,9 @@ class DashboardMentorController extends Controller
         // Ambil user yang sedang login
         $user = Auth::user();
         
-        // Ambil kategori dari mentor yang login
-        $mentorKategoriId = $user->MentorProject->kategoriId ?? null;
+        // Ambil kategori dari mentor yang login (ambil yang terbaru)
+        $mentorProject = $user->MentorProject->latest()->first();
+        $mentorKategoriId = $mentorProject->kategoriId ?? null;
         
         // Modifikasi query untuk hanya menampilkan proyek yang belum ditinjau
         // dan memiliki kategori yang sesuai dengan kategori mentor

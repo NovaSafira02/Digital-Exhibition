@@ -46,7 +46,7 @@ class User extends Authenticatable
 
     public function MentorProject()
     {
-        return $this->hasOne(MentorProject::class, 'userId');
+        return $this->hasOne(MentorProject::class, 'userId')->latest();
     }
     public function Mentee()
     {

@@ -27,9 +27,7 @@
                             <th>No</th>
                             <th>Nama Group</th>
                             <th>Mentor Group</th>
-                            <th>Kategori</th>
                             <th>Sesi Kelas</th>
-                            <th>Batch</th>
                             <th>Tanggal</th>
                             <th>Aksi</th>
                         </tr>
@@ -62,11 +60,7 @@
                                         {{ implode(', ', $mentorUsernames) }}
                                     @endif
                                 </td>
-
-
-                                <td>{{ $project->Kategori->nama ?? '-' }}</td>
                                 <td>{{ $project->sesi_kelas }}</td>
-                                <td>{{ $project->Kategori->batch ?? '-' }}</td>
                                 <td>{{ $project->created_at->format('d M Y H:i') }}</td>
                                 <td>
                                     <a class="btn btn-primary" href="{{ route('detail-project', $project->id) }}" style="background: #8A3DFF">

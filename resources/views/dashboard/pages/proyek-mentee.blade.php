@@ -37,7 +37,21 @@
                         @foreach ($projects as $index => $project)
                             <tr>
                                 <td>{{ $index + 1 }}</td>
-                                <td>{{ $project->nama_product }}</td>
+                                <td class="text-start">@php
+                                    $nama_product = $project->nama_product;
+                                    $words = explode(' ', $nama_product);
+                                    
+                                    if (count($words) > 4) {
+                                        $firstPart = implode(' ', array_slice($words, 0, 4));
+                                        $secondPart = implode(' ', array_slice($words, 4, 4));
+                                        $thirdPart = implode(' ', array_slice($words, 8, 4));
+                                        $fourthPart = implode(' ', array_slice($words, 12, 4));
+                                        $fifthPart = implode(' ', array_slice($words, 16, 4));
+                                        echo $firstPart . '<br>' . $secondPart . '<br>' . $thirdPart . '<br>' . $fourthPart . '<br>' . $fifthPart;
+                                    } else {
+                                        echo $nama_product;
+                                    }
+                                @endphp</td>
                                 <td>{{ $project->nama_group }}</td>
                                 <td>{{ $project->kategori->nama ?? '-' }}</td>
                                 <td>{{ $project->sesi_kelas }}</td>
@@ -73,8 +87,8 @@
                                 @if ($project->is_best == 1)
                                     <img src="{{ asset('img/label-card.png') }}"
                                         alt="Best Project Label"
-                                        class="position-absolute top-0 end-0 m-3"
-                                        style="width: 260px; z-index: 10;">
+                                        class="position-absolute top-5 end-3 m-3"
+                                        style="width: 200px; z-index: 10;">
                                 @endif
                                 <img src="{{ asset('storage/' . $project->thumbnail) }}" class="img-fluid img-card"
                                     alt="Thumbnail Project" />
