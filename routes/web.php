@@ -3,6 +3,7 @@
 use App\Http\Controllers\AkunMenteeController;
 use App\Http\Controllers\AkunMentorController;
 use App\Http\Controllers\ArsipProyekController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardMenteController;
@@ -74,4 +75,8 @@ Route::prefix('dashboard')->group(function () {
 
     // Kategori
     Route::resource('kategori', KategoriController::class);
+
+    // Admin Settings
+    Route::get('/admin/settings', [AdminController::class, 'settings'])->name('admin.settings');
+    Route::put('/admin/update-password', [AdminController::class, 'updatePassword'])->name('admin.updatePassword');
 });

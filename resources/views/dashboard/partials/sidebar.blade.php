@@ -1,4 +1,4 @@
- <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
      id="sidenav-main" style="background: #eee6fb;">
      <div class="sidenav-header">
          <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
@@ -111,6 +111,16 @@
                              <i class="fa-solid fa-list fs-6"></i>
                          </div>
                          <span class="nav-link-text ms-1">Kategori</span>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link {{ Request::is('dashboard/admin/settings*') ? 'active' : '' }}"
+                         href="/dashboard/admin/settings">
+                         <div class="icon icon-shape icon-sm shadow border-radius-md text-center me-2 d-flex align-items-center justify-content-center"
+                             style="background: {{ Request::is('dashboard/admin/settings*') ? '#6f42c1' : '#b28be9' }}">
+                             <i class="fa-solid fa-gear fs-6"></i>
+                         </div>
+                         <span class="nav-link-text ms-1">Pengaturan</span>
                      </a>
                  </li>
              @elseif(auth()->user()->isAdmin == 0 && auth()->user()->MentorProject != null)

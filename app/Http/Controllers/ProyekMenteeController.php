@@ -17,7 +17,7 @@ class ProyekMenteeController extends Controller
                 $query->where('status', 'Disetujui');
             })
             ->get();
-        $pages = 'Arsip Proyek Mentee';
+        $pages = 'Proyek Mentee';
         return view('dashboard.pages.proyek-mentee', compact('projects', 'pages'));
     }
 
