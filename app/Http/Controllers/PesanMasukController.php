@@ -14,6 +14,11 @@ class PesanMasukController extends Controller
     {
         $pages = "Pesan Masuk";
         $pesans = Pesan::orderBy('created_at', 'desc')->get();
+        
+        // Simpan semua ID pesan yang telah dilihat dalam session
+        $viewedMessageIds = $pesans->pluck('id')->toArray();
+        session(['viewed_messages' => $viewedMessageIds]);
+        
         return view('dashboard.pages.pesan')->with(compact('pages', 'pesans'));
     }
 

@@ -6,8 +6,8 @@
             <div class="row gy-4">
                 <div class="col-lg-6 col-md-12 order-2 order-lg-1">
                     <h1 class="fs-3 fs-md-4 fs-lg-5">Digital Exhibition</h1>
-                    <p>Digital Exhibition adalah sebuah platform yang dirancang untuk memungkinkan para peserta program
-                        pelatihan mempresentasikan karya mereka dalam bentuk website. Platform ini menjadi wadah untuk
+                    <p class="text-justify">Digital Exhibition adalah sebuah platform website yang dirancang untuk memungkinkan para peserta program
+                        pelatihan mempresentasikan karya secara digital/virtual. Platform website ini menjadi wadah untuk
                         menampilkan kreativitas serta kompetensi teknis yang telah mereka kembangkan selama mengikuti pelatihan.
                     </p>
                     <div class="row gy-3">
@@ -44,10 +44,11 @@
                     <img src="{{ asset('img/tentang.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
                 </div>
                 <div class="col-lg-4 col-md-12">
-                    <h1 class="fs-3 fs-md-4 fs-lg-5">Proyek Mentee Group Yang Ditampilkan</h1>
-                    <p>Project yang ditampilkan terbagi dari beberapa kelompok/tim di beberapa program, ada juga kelompok yang
-                        collab antar program pelatihan.
-                    </p>
+                    <h1 class="fs-3 fs-md-4 fs-lg-5">Proyek Grup Mentee Yang Ditampilkan</h1>
+                    <p class="text-justify">Project yang ditampilkan terbagi dari beberapa kategori di beberapa program, ada juga grup yang
+                        collab antar program di Infinite Learning.
+                    </p><br>
+                    <p class="text-justify">Bisa di lihat pada gambar, juga masih banyak lagi program dan kategori proyek kolaborasi di Infinite Learning.</p>
                 </div>
             </div>
         </div>
@@ -58,10 +59,8 @@
         <div class="container">
             <div class="row gy-4 align-items-center">
                 <div class="col-lg-6 col-md-12 order-2 order-lg-1">
-                    <h1 class="fs-3 fs-md-4 fs-lg-5">Merge Collab (Web & Mob & AI)</h1>
-                    <p>Program merupakan program yang membangun aplikasi lengkap yang mencakup pengembangan web, mobile, dan
-                        integrasi teknologi AI. Peserta diajak membuat solusi end-to-end dari sisi antarmuka pengguna hingga
-                        kecerdasan buatan seperti chatbot atau sistem rekomendasi.
+                    <h1 class="fs-3 fs-md-4 fs-lg-5">Merge Collab (Web & Mobile & AI)</h1>
+                    <p class="text-justify">Hasil kolaborasi tiga program sekaligus, yaitu Program Web, Program Mobile, dan Program Artificial Intelligence (AI). Proyek-proyek dalam kategori ini mengintegrasikan teknologi web modern, pengembangan aplikasi mobile, serta kecerdasan buatan untuk menciptakan solusi digital yang inovatif dan komprehensif. Peserta memadukan keahlian frontend dan backend web development, kemampuan membuat aplikasi mobile yang responsif, serta algoritma AI seperti machine learning dan natural language processing, Peserta diajak membuat solusi end-to-end dari sisi antarmuka pengguna hingga kecerdasan buatan seperti chatbot atau sistem rekomendasi. Sehingga menghasilkan karya yang multifungsi dan mampu menjawab tantangan teknologi masa depan.</p>
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-12 text-center order-1 order-lg-2 mb-4 mb-lg-0">
@@ -78,10 +77,8 @@
                     <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
                 </div>
                 <div class="col-lg-6 col-md-12">
-                    <h1 class="fs-3 fs-md-4 fs-lg-5">Merge (Web & Mob)</h1>
-                    <p>Program ini berfokus pada pengembangan aplikasi lintas platform, yaitu website dan aplikasi mobile, tanpa
-                        komponen AI. Program ini cocok bagi peserta yang ingin membangun sistem terpadu yang dapat diakses di
-                        berbagai perangkat.
+                    <h1 class="fs-3 fs-md-4 fs-lg-5">Merge (Web & Mobile)</h1>
+                    <p class="text-justify">Kolaborasi antara Program Web dan Program Mobile, yang menggabungkan kekuatan teknologi pengembangan web dan aplikasi mobile. Proyek-proyek ini fokus pada pembuatan produk digital yang berjalan mulus di berbagai platform, baik desktop maupun perangkat mobile. Peserta menggunakan framework dan tools modern untuk memastikan user experience yang responsif dan interaktif, sekaligus memanfaatkan kemampuan mobile device seperti sensor dan push notification untuk meningkatkan engagement pengguna.
                     </p>
                 </div>
             </div>
@@ -93,8 +90,7 @@
             <div class="row gy-4 align-items-center">
                 <div class="col-lg-6 col-md-12 order-2 order-lg-1">
                     <h1 class="fs-3 fs-md-4 fs-lg-5">Collab (Web & AI)</h1>
-                    <p>Program ini merupakan penggabungan antara teknologi web dan AI, seperti penggunaan Natural Language
-                        Processing (NLP) atau computer vision dalam aplikasi web, namun tanpa pengembangan sisi mobile.
+                    <p class="text-justify">Menggabungkan keahlian dari Program Web dan Program Artificial Intelligence. Proyek dalam kategori ini menonjolkan integrasi teknologi web dengan kecerdasan buatan untuk menghadirkan aplikasi yang tidak hanya interaktif, tetapi juga cerdas. Contohnya termasuk aplikasi web dengan fitur chatbot otomatis, sistem rekomendasi berbasis AI, dan analisis data real-time. Dengan kolaborasi ini, peserta mampu menunjukkan inovasi teknologi yang mampu meningkatkan efektivitas dan efisiensi pengguna.
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-12 text-center order-1 order-lg-2 mb-4 mb-lg-0">
@@ -112,7 +108,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <h1 class="fs-3 fs-md-4 fs-lg-5">Website</h1>
-                    <p>Program website merupakan pembuatan aplikasi berbasis website dengan
+                    <p class="text-justify">Website adalah hasil karya murni dari peserta Program Web. Proyek-proyek ini menampilkan keahlian dalam membangun berbagai jenis website, mulai dari landing page sederhana hingga aplikasi web kompleks. Peserta mengimplementasikan teknologi frontend seperti HTML5, CSS3, JavaScript, serta framework modern seperti React atau Vue.js. Untuk sisi backend, digunakan Node.js dan Express.js yang memungkinkan pengembangan API dan server-side logic secara efisien dan scalable. Fokus utama proyek-proyek ini adalah pada desain responsif, performa optimal, dan user experience yang intuitif, sekaligus memperlihatkan arsitektur full-stack yang solid dan siap digunakan di lingkungan produksi.
                     </p>
                 </div>
             </div>
@@ -124,7 +120,7 @@
             <div class="row gy-4 align-items-center">
                 <div class="col-lg-6 col-md-12 order-2 order-lg-1">
                     <h1 class="fs-3 fs-md-4 fs-lg-5">Game</h1>
-                    <p>Berfokus pada pengembangan game berbasis dekstop maupun mobile dengan memanfaatkan game engine seperti Unity.
+                    <p class="text-justify">Game merupakan karya dari peserta Program Game yang berfokus pada pengembangan video game dengan berbagai genre dan platform. Proyek ini menampilkan pemahaman mendalam tentang game design, pemrograman game engine (seperti Unity atau Unreal Engine), serta aspek estetika visual dan audio. Peserta menggabungkan storytelling, mekanik permainan, dan teknologi grafis untuk menciptakan pengalaman bermain yang menarik dan interaktif.
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-12 text-center order-1 order-lg-2 mb-4 mb-lg-0">
@@ -142,10 +138,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <h1 class="fs-3 fs-md-4 fs-lg-5">Artificial Intelligence</h1>
-                    <p>Dirancang untuk memberikan pemahaman menyeluruh tentang kecerdasan buatan serta penerapannya dalam
-                        pengembangan aplikasi digital. Dalam program ini, peserta akan mempelajari dasar-dasar Artificial
-                        Intelligence, termasuk pengenalan machine learning, algoritma pembelajaran seperti klasifikasi dan
-                        regresi, serta cara kerja model AI dalam mengolah data.
+                    <p class="text-justify">Artificial Intelligence berisi proyek yang dikembangkan oleh peserta Program AI dengan fokus utama pada pengembangan solusi berbasis kecerdasan buatan. Peserta mengerjakan aplikasi seperti machine learning, computer vision, natural language processing, dan automasi cerdas. Proyek ini menampilkan kemampuan dalam mengolah data besar, membangun model prediktif, dan mengimplementasikan AI dalam berbagai konteks praktis yang dapat membantu berbagai sektor industri.
                     </p>
                 </div>
             </div>
@@ -157,9 +150,7 @@
             <div class="row gy-4 align-items-center">
                 <div class="col-lg-6 col-md-12 order-2 order-lg-1">
                     <h1 class="fs-3 fs-md-4 fs-lg-5">HCRH</h1>
-                    <p>Hybrid Cloud & Red Hat, yaitu pelatihan profesional yang mengajarkan peserta untuk mengelola dan
-                        menjalankan aplikasi di lingkungan Hybrid Cloud menggunakan teknologi Red Hat seperti OpenShift dan
-                        Ansible.
+                    <p class="text-justify">Hybrid Cloud & Red Hat (HCRH) adalah hasil karya peserta program yang berfokus pada teknologi cloud computing dengan pendekatan hybrid dan penggunaan platform Red Hat. Proyek-proyek ini menunjukkan penerapan teknologi containerization (seperti Kubernetes dan OpenShift), otomasi cloud, serta manajemen infrastruktur TI yang scalable dan aman. Peserta memperlihatkan pemahaman mendalam dalam mengelola lingkungan cloud hybrid yang mendukung transformasi digital perusahaan.
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-12 text-center order-1 order-lg-2 mb-4 mb-lg-0">
@@ -168,6 +159,22 @@
             </div>
         </div>
     </section>
+
+    <section class="hero2 d-flex align-items-center py-4 py-md-5" style="background: #fafafa">
+        <div class="container">
+            <div class="row gy-4 align-items-center">
+                <div class="col-lg-6 col-md-12 text-center mb-4 mb-lg-0">
+                    <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <h1 class="fs-3 fs-md-4 fs-lg-5">Network Security</h1>
+                    <p class="text-justify">Network Security adalah kumpulan proyek yang dikembangkan oleh peserta Program Network Security, dengan fokus pada perlindungan sistem dan jaringan dari ancaman siber. Proyek ini meliputi penerapan teknologi firewall, enkripsi data, penetration testing, serta pengembangan sistem deteksi dan pencegahan intrusi. Peserta menunjukkan keahlian dalam menjaga keamanan infrastruktur digital, mengidentifikasi celah keamanan, dan mengimplementasikan solusi proteksi yang efektif.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 @endsection
 @section('css')
     <style>
@@ -269,6 +276,10 @@
 
         .hero-text {
             max-width: 100%;
+        }
+
+        .text-justify {
+            text-align: justify;
         }
 
         .project-card {

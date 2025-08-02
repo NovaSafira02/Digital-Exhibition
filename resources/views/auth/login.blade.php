@@ -4,50 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="{{ asset('img/logo-il-white.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/logo-il-white.png') }}">
     <title>Login Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: #f8f9fa;
-            /* Light background */
-
-            /* supaya buttonnya bisa msuk ksih posisi relative d sini */
-            position: relative; 
+            position: relative;
+            padding: 20px;
         }
 
         .login-container {
             display: flex;
+            flex-direction: row;
             width: 100%;
             max-width: 900px;
-            height: 600px;
+            min-height: 500px;
             overflow: hidden;
             border-radius: 8px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-
         }
 
         .login-form {
-            flex-basis: 400px;
-            padding: 40px;
+            flex: 1;
+            padding: 30px;
             background-color: #ffffff;
-
             display: flex;
             flex-direction: column;
             justify-content: center;
+            min-width: 300px;
         }
 
         .login-form h2 {
             color: #333333;
+            margin-bottom: 20px;
         }
 
         .btn-primary {
             background-color: #6f42c1;
-            /* Custom color */
             border: none;
         }
 
@@ -69,7 +67,6 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.4);
-            /* Ubah 0.4 sesuai tingkat redup */
             z-index: 1;
             border-radius: inherit;
         }
@@ -78,7 +75,6 @@
             position: absolute;
             z-index: 2;
             padding: 20px;
-            /* Optional: translucent background */
             border-radius: 10px;
         }
 
@@ -107,12 +103,71 @@
             background-color: #6c2edc;
             color: white;
         }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        /* Media queries untuk responsif */
+        @media (max-width: 768px) {
+            .login-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .login-image {
+                min-height: 200px;
+                order: 1;
+            }
+
+            .login-form {
+                order: 2;
+            }
+
+            .overlay-text h1 {
+                font-size: 24px;
+            }
+
+            .overlay-text p {
+                font-size: 14px;
+            }
+
+            .back-button {
+                top: 10px;
+                left: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .login-form {
+                padding: 20px;
+            }
+
+            .login-image {
+                min-height: 150px;
+            }
+
+            .overlay-text {
+                padding: 15px;
+            }
+
+            .overlay-text h1 {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <!-- Tombol kembali -->
-    <a href="/" class="position-absolute top-0 start-0 m-5">
+    <a href="/" class="back-button btn btn-light btn-sm">
         Kembali Ke Beranda
     </a>
     
@@ -127,7 +182,7 @@
         <div class="login-form">
             <h2>Selamat Datang</h2>
             <div class="row">
-                <div class="col-sm-6 col-md small">
+                <div class="col-12">
                     @if (session()->has('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             {{ session('success') }}
@@ -157,7 +212,6 @@
                     <small class="form-text text-muted">*Silahkan hubungi admin jika lupa kata sandi.</small>
                 </div>
                 <button type="submit" class="btn btn-custom rounded d-block w-100">Masuk</button>
-                {{-- <button type="submit" class="btn btn-primary d-block w-100">Masuk</button> --}}
             </form>
         </div>
     </div>

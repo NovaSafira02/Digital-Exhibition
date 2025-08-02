@@ -62,6 +62,9 @@
                              <i class="fa-solid fa-message fs-6"></i>
                          </div>
                          <span class="nav-link-text ms-1">Pesan Masuk</span>
+                         @if(isset($unreadMessagesCount) && $unreadMessagesCount > 0)
+                             <span class="badge rounded-pill bg-danger ms-auto">{{ $unreadMessagesCount }}</span>
+                         @endif
                      </a>
                  </li>
                  <li class="nav-item">
@@ -183,6 +186,9 @@
                              <i class="fa-solid fa-circle-check fs-6"></i>
                          </div>
                          <span class="nav-link-text ms-1">Status Proyek</span>
+                         @if(isset($newStatusCount) && $newStatusCount > 0)
+                             <span class="badge rounded-pill bg-danger ms-auto">{{ $newStatusCount }}</span>
+                         @endif
                      </a>
                  </li>
              @endif

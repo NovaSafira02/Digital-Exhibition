@@ -30,7 +30,8 @@ Route::get('/showcase', [MainController::class, 'showcase']);
 Route::post('/pesan', [MainController::class, 'store'])->name('pesan.store');
 Route::get('/tentang', [MainController::class, 'tentang']);
 
-Route::prefix('dashboard')->group(function () {
+// Terapkan middleware checkauth pada semua rute dashboard
+Route::prefix('dashboard')->middleware('checkauth')->group(function () {
     // Halaman utama dashboard
     Route::get('/index', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/index-mente', [DashboardMenteController::class, 'index'])->name('dashboard.mente');

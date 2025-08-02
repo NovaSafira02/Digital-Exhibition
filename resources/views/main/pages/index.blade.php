@@ -182,8 +182,8 @@ Terlihat bagaimana para mentee memanfaatkan keterampilan teknis dan pemikiran st
         }
 
         .text-justify {
-    text-align: justify;
-  }
+            text-align: justify;
+        }
 
         .nav-link.active {
             color: #fff !important;
