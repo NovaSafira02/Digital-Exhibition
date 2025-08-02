@@ -1,4 +1,4 @@
- <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
      id="sidenav-main" style="background: #eee6fb;">
      <div class="sidenav-header">
          <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
@@ -62,6 +62,9 @@
                              <i class="fa-solid fa-message fs-6"></i>
                          </div>
                          <span class="nav-link-text ms-1">Pesan Masuk</span>
+                         @if(isset($unreadMessagesCount) && $unreadMessagesCount > 0)
+                             <span class="badge rounded-pill bg-danger ms-auto">{{ $unreadMessagesCount }}</span>
+                         @endif
                      </a>
                  </li>
                  <li class="nav-item">
@@ -173,6 +176,9 @@
                              <i class="fa-solid fa-circle-check fs-6"></i>
                          </div>
                          <span class="nav-link-text ms-1">Status Proyek</span>
+                         @if(isset($newStatusCount) && $newStatusCount > 0)
+                             <span class="badge rounded-pill bg-danger ms-auto">{{ $newStatusCount }}</span>
+                         @endif
                      </a>
                  </li>
              @endif

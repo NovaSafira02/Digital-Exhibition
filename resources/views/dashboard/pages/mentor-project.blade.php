@@ -40,6 +40,7 @@
                             <th>Email</th>
                             <th>Mentor</th>
                             <th>Kategori</th>
+                            <th>Batch</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -59,6 +60,7 @@
                                 </td>
                                 
                                 <td>{{ $group['kategori']->nama ?? '-' }}</td>
+                                <td>{{ $group['kategori']->batch ?? '-' }}</td>
                                 <td>
                                     <button class="btn btn-warning p-2 me-2" data-bs-toggle="modal" style="background: rgba(76, 175, 80, 0.2)" data-bs-target="#editAsesmenModal{{ $group['id'] }}"><img src="{{ asset('img/icons/edit-icon.svg') }}" alt="Edit" width="32" height="32"></button>
 
