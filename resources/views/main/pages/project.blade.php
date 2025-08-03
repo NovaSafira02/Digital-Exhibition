@@ -456,7 +456,7 @@
         .section-title {
             font-weight: 600;
             font-size: 1.25rem;
-            margin-top: 2.5rem;
+            margin-top: 2rem;
             margin-bottom: 1.25rem;
             color: #222;
         }
@@ -660,11 +660,7 @@
                 font-size: 1.5rem;
             }
 
-            .section-title {
-                font-size: 1.2rem;
-                margin-top: 2rem;
-                margin-bottom: 1rem;
-            }
+            
         }
     </style>
 @endsection

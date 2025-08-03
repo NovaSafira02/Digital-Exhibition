@@ -181,9 +181,9 @@
                     </p>
 
                     <div class="mb-3">
-                        <h6>Logo Product</h6>
+                        <h6>Logo Produk</h6>
                         <small class="text-muted d-block mb-1">
-                            Logo Product wajib menggunakan gambar berformat <b>*.PNG, *.JPG, atau *.SVG</b> dan ukuran file &lt; 2 MB.
+                            Logo Produk wajib menggunakan gambar berformat <b>*.PNG, *.JPG, atau *.SVG</b> dan ukuran file &lt; 2 MB.
                             Disarankan menggunakan logo dengan background transparan untuk hasil terbaik.
                         </small>
                         <label for="logoProduct" class="file-drop-zone @error('logo') is-invalid @enderror" tabindex="0">
@@ -194,7 +194,7 @@
                                 <circle cx="8.5" cy="8.5" r="1.5"></circle>
                                 <polyline points="21,15 16,10 5,21"></polyline>
                             </svg>
-                            <span id="logoFileName">upload logo product</span><br />
+                            <span id="logoFileName">upload logo produk</span><br />
                             <button type="button" class="btn btn-dark btn-sm mt-1">Pilih Logo</button>
                             <input type="file" id="logoProduct" class="d-none" accept="image/*"
                                 aria-label="Upload Logo Product" name="logo" />
@@ -248,9 +248,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <h6>Thumbnail Product</h6>
+                        <h6>Thumbnail Produk</h6>
                         <small class="text-muted d-block mb-1">
-                            Thumbnail Product wajib menggunakan gambar berformat <b>*.JPEG</b> dan ukuran file &lt; 5 MB
+                            Thumbnail Produk wajib menggunakan gambar berformat <b>*.JPEG</b> dan ukuran file &lt; 5 MB
                             dan
                             untuk ukurannya yaitu ukuran untuk desktop 16:9 atau 1280 × 720.</small>
                         <label for="thumbnailProduct" class="file-drop-zone @error('thumbnail') is-invalid @enderror" tabindex="0">
@@ -285,8 +285,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <h6 for="linkFigma">Preview Android</h6>
-                        <small class="text-muted d-block mb-1">Masukkan link apk Android. Field ini boleh dikosongkan.</small>
+                        <h6 for="linkFigma">Link Preview Android/Prototype</h6>
+                        <small class="text-muted d-block mb-1">Masukkan link apk Android. Jika aplikasi kamu belum di publish ke Playstore, Alternatif lain kamu bisa meletakkan aplikasi kamu ke drive, masukkan link drive file apk, atau bisa menggunakan platform seperti
+                            <strong>Appetize.io</strong> atau platform lain sejenisnya. Jika tidak memungkinkan juga, Kamu bisa menggunakan link prototype Android.</small>
                         <input type="url" id="linkFigma" class="form-control @error('link_figma') is-invalid @enderror" 
                             placeholder="Masukkan link preview Android" name="link_figma" value="{{ old('link_figma') }}" />
                         @error('link_figma')
@@ -296,11 +297,9 @@
 
                     <div class="mb-3">
                         <h6 for="linkGithub">Link Preview Website/Prototype</h6>
-                        <small class="text-muted d-block mb-1">Jika website kamu belum menggunakan hosting yang berbayar
-                            atau
-                            mempunyai nama domain resmi, kamu bisa menggunakan platform seperti <strong>Vercel</strong> atau
-                            <strong>Netlify</strong> atau platform lain sejenisnya. kamu juga bisa menggunakan link
-                            prototype.</small>
+                        <small class="text-muted d-block mb-1">Jika website kamu belum menggunakan hosting yang berbayar atau
+                            mempunyai nama domain resmi, Alternatif lain kamu bisa menggunakan platform seperti <strong>Vercel</strong> atau
+                            <strong>Netlify</strong> atau platform lain sejenisnya. Jika tidak memungkinkan juga, Kamu bisa menggunakan link prototype Website.</small>
                         <input type="url" id="linkGithub" class="form-control @error('link_website') is-invalid @enderror" 
                             placeholder="Masukkan link preview website" name="link_website" value="{{ old('link_website') }}" />
                         @error('link_website')

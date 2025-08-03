@@ -95,46 +95,82 @@
                             </div>
 
                             <!-- Video + Technologies + Links row -->
-                            <div class="row gx-4 mb-4">
-                                <div class="col-lg-8 mb-4">
-                                    <div class="video-wrapper shadow rounded-3">
+                            <div class="row gy-4 gx-md-4">
+                                <div class="col-12 col-lg-8">
+                                    <!-- Video wrapper -->
+                                    <div class="video-wrapper shadow rounded-3 mb-4">
                                         <iframe src="{{ $project->link_video }}" title="Project Video" frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                                             allowfullscreen></iframe>
                                     </div>
+                                    
+                                    <!-- Title and badges after video -->
+                                    <div class="d-flex flex-wrap align-items-center mb-3 gap-3">
+                                        <div class="product-logo-container">
+                                            <img src="{{ asset('storage/' . $project->logo) }}" alt="{{ $project->nama_product }} Logo" class="product-logo">
+                                        </div>
+                                        <h1 class="fw-bold mb-0 fs-3 fs-md-2">{{ $project->nama_product }}</h1>
+                                    </div>
+                                    <div class="mt-3 mb-3 d-flex flex-wrap gap-2 badge-group">
+                                        <span class="badge badge-purple p-2">by {{ $project->nama_group }}</span>
+                                        <span class="badge badge-pink p-2">{{ $project->Kategori->nama }}</span>
+                                        <span class="badge badge-blue-outline p-2">Batch {{ $project->Kategori->batch }}</span>
+                                    </div>
                                 </div>
 
-                                <div class="col-lg-4">
+                                <div class="col-12 col-lg-4">
                                     <div class="rounded-container shadow-sm p-3 mb-4">
-                                        <h5 class="mb-3">Teknologi Yang Digunakan</h5>
-                                        <ul class="tech-icons ps-0">
-                                            @foreach ($project->Teches as $tech)
-                                                <li>
-                                                    <img src="{{ asset('storage/public/icons/' . $tech->icon) }}"
-                                                        alt="{{ $tech->nama }}" class="me-2" width="10%">
-                                                    {{ $tech->nama }}
-                                                </li>
-                                            @endforeach
-                                        </ul>
+                                        <h5 class="mb-3 fs-6 fs-md-5">Teknologi Yang Digunakan</h5>
+                                        <div class="row tech-container g-2">
+                                            @php
+                                                $techCount = count($project->Teches);
+                                                $techesPerColumn = 3;
+                                                $columnCount = ceil($techCount / $techesPerColumn);
+                                                $techIndex = 0;
+                                            @endphp
+
+                                            @for ($col = 0; $col < $columnCount; $col++)
+                                                <div class="col-6 col-md-{{ 12 / min($columnCount, 3) }} mb-2">
+                                                    <ul class="tech-icons ps-0 mb-0">
+                                                        @for ($i = 0; $i < $techesPerColumn && $techIndex < $techCount; $i++)
+                                                            @php $tech = $project->Teches[$techIndex++]; @endphp
+                                                            <li class="d-flex align-items-center mb-2">
+                                                                <img src="{{ asset('storage/' . $tech->icon) }}" alt="{{ $tech->nama }}" class="me-2" width="20" height="20">
+                                                                <span class="small">{{ $tech->nama }}</span>
+                                                            </li>
+                                                        @endfor
+                                                    </ul>
+                                                </div>
+                                            @endfor
+                                        </div>
                                     </div>
-                                    <div class="rounded-container shadow-sm p-3">
-                                        <h5 class="mb-3">Link Proyek</h5>
-                                        <ul class="ps-3">
-                                            <li><a href="{{ $project->link_website }}" class="link-blue" target="_blank"
-                                                    rel="noopener">Link Github</a></li>
-                                            <li><a href="{{ $project->link_figma }}" class="link-blue" target="_blank"
-                                                    rel="noopener">Link Prototype</a></li>
-                                        </ul>
+                                    <div class="rounded-container shadow-sm p-3 mb-4">
+                                        <h5 class="mb-3 fs-6 fs-md-5">Link Proyek</h5>
+                                        <div class="project-links">
+                                            @if($project->link_figma)
+                                            <div class="link-item d-flex align-items-center">
+                                                <div class="me-2">
+                                                    <img src="{{ asset('img/icons/android.svg') }}" alt="Prototype" width="20" height="20">
+                                                </div>
+                                                <a href="{{ $project->link_figma }}" class="link-blue text-decoration-none small" target="_blank" rel="noopener">
+                                                    Preview Android
+                                                </a>
+                                            </div>
+                                            @endif
+
+                                            @if($project->link_website)
+                                            <div class="link-item d-flex align-items-center">
+                                                <div class="me-2">
+                                                    <img src="{{ asset('img/icons/website.svg') }}" alt="Web" width="20" height="20">
+                                                </div>
+                                                <a href="{{ $project->link_website }}" class="link-blue text-decoration-none small" target="_blank" rel="noopener">
+                                                    Preview Website
+                                                </a>
+                                            </div>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- Title and badges -->
-                            <h1 class="fw-bold">{{ $project->nama_product }}</h1>
-                            <div class="mt-4 mb-3 d-flex flex-wrap gap-3 badge-group">
-                                <span class="badge badge-purple p-2">by {{ $project->nama_group }}</span>
-                                <span class="badge badge-pink p-2">{{ $project->Kategori->nama }}</span>
-                                <span class="badge badge-blue-outline p-2">Batch {{ $project->Kategori->batch }}</span>
                             </div>
 
                             <!-- Description -->
@@ -299,6 +335,33 @@
             color: #222;
         }
 
+                        .product-logo-container {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+        }
+
+        .product-logo {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .project-links .link-item {
+            margin-bottom: 0.75rem;
+        }
+
+        .tech-container .tech-icons li {
+            list-style: none;
+        }
+
         .rounded-container {
             border-radius: 1.5rem;
             background: #fff;
@@ -357,7 +420,7 @@
         .section-title {
             font-weight: 600;
             font-size: 1.25rem;
-            margin-top: 3rem;
+            margin-top: 1.5rem;
             margin-bottom: 1.5rem;
             color: #222;
         }
