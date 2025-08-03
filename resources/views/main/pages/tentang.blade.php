@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 text-center order-1 order-lg-2 mb-4 mb-lg-0">
-                    <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
+                    <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side2 img-fluid">
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
         <div class="container">
             <div class="row gy-4 align-items-center">
                 <div class="col-lg-8 col-md-12 mb-4 mb-lg-0">
-                    <img src="{{ asset('img/tentang.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
+                    <img src="{{ asset('img/tentang.png') }}" alt="Image of the exhibition" class="image-side2 img-fluid">
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <h1 class="fs-3 fs-md-4 fs-lg-5">Proyek Grup Mentee Yang Ditampilkan</h1>
@@ -64,7 +64,7 @@
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-12 text-center order-1 order-lg-2 mb-4 mb-lg-0">
-                    <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
+                    <img src="{{ asset('img/merge-collab.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@
         <div class="container">
             <div class="row gy-4 align-items-center">
                 <div class="col-lg-6 col-md-12 text-center mb-4 mb-lg-0">
-                    <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
+                    <img src="{{ asset('img/merge.webp') }}" alt="Image of the exhibition" class="image-side img-fluid">
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <h1 class="fs-3 fs-md-4 fs-lg-5">Merge (Web & Mobile)</h1>
@@ -94,7 +94,7 @@
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-12 text-center order-1 order-lg-2 mb-4 mb-lg-0">
-                    <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
+                    <img src="{{ asset('img/collab.jpg') }}" alt="Image of the exhibition" class="image-side img-fluid">
                 </div>
             </div>
         </div>
@@ -104,7 +104,7 @@
         <div class="container">
             <div class="row gy-4 align-items-center">
                 <div class="col-lg-6 col-md-12 text-center mb-4 mb-lg-0">
-                    <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
+                    <img src="{{ asset('img/web.jpeg') }}" alt="Image of the exhibition" class="image-side img-fluid">
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <h1 class="fs-3 fs-md-4 fs-lg-5">Website</h1>
@@ -124,7 +124,7 @@
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-12 text-center order-1 order-lg-2 mb-4 mb-lg-0">
-                    <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
+                    <img src="{{ asset('img/game.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
                 </div>
             </div>
         </div>
@@ -134,7 +134,7 @@
         <div class="container">
             <div class="row gy-4 align-items-center">
                 <div class="col-lg-6 col-md-12 text-center mb-4 mb-lg-0">
-                    <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
+                    <img src="{{ asset('img/aai.webp') }}" alt="Image of the exhibition" class="image-side img-fluid">
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <h1 class="fs-3 fs-md-4 fs-lg-5">Artificial Intelligence</h1>
@@ -154,7 +154,7 @@
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-12 text-center order-1 order-lg-2 mb-4 mb-lg-0">
-                    <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
+                    <img src="{{ asset('img/hcrh.webp') }}" alt="Image of the exhibition" class="image-side img-fluid">
                 </div>
             </div>
         </div>
@@ -164,7 +164,7 @@
         <div class="container">
             <div class="row gy-4 align-items-center">
                 <div class="col-lg-6 col-md-12 text-center mb-4 mb-lg-0">
-                    <img src="{{ asset('img/div2.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
+                    <img src="{{ asset('img/netsec.png') }}" alt="Image of the exhibition" class="image-side img-fluid">
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <h1 class="fs-3 fs-md-4 fs-lg-5">Network Security</h1>
@@ -252,6 +252,13 @@
         }
 
         .image-side {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px; /* Menambahkan sudut tumpul/rounded pada gambar */
+        }
+
+        .image-side2 {
             max-width: 100%;
             height: auto;
         }

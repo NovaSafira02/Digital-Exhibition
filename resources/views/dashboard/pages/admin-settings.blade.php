@@ -79,7 +79,7 @@
                                 
                                 <div class="mb-3">
                                     <label class="form-label">Role</label>
-                                    <input type="text" class="form-control" value="Administrator" readonly>
+                                    <input type="text" class="form-control" value="Admin" readonly>
                                 </div>
                                 
                                 <div class="mb-3">

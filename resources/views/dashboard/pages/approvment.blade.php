@@ -99,7 +99,7 @@
         <!-- Project description -->
         <section>
             <h3 class="section-title">Deskripsi Project</h3>
-            <p>{!! $project->deskripsi !!}</p>
+            <div class="project-description text-justify fs-6">{!! $project->deskripsi !!}</div>
         </section>
 
         <!-- Mentor Section -->
@@ -249,6 +249,34 @@
 
         .project-links .link-item img {
             margin-right: 0.5rem;
+        }
+
+        .project-description {
+            font-size: 1rem;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        /* Pastikan semua elemen di dalam deskripsi juga memiliki font yang sesuai */
+        .project-description p, 
+        .project-description li, 
+        .project-description span,
+        .project-description div,
+        .project-description h1,
+        .project-description h2,
+        .project-description h3,
+        .project-description h4,
+        .project-description h5,
+        .project-description h6 {
+            font-size: 1rem !important;
+            max-width: 100% !important;
+            overflow-wrap: break-word !important;
+        }
+
+        /* Pastikan gambar dalam deskripsi responsif */
+        .project-description img {
+            max-width: 100% !important;
+            height: auto !important;
         }
 
         .rounded-container {
