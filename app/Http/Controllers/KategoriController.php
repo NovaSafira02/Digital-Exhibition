@@ -14,7 +14,7 @@ class KategoriController extends Controller
     public function index()
     {
         $pages = "Kategori";
-        $kategoris = KategoriProject::all();
+        $kategoris = KategoriProject::orderBy('created_at', 'desc')->get();
         return view('dashboard.pages.kategori')->with(compact('pages', 'kategoris'));
     }
 

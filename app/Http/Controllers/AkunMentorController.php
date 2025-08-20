@@ -16,6 +16,7 @@ class AkunMentorController extends Controller
     public function index()
     {
         $mentors = Mentor::get();
+        $mentors = Mentor::orderBy('created_at','desc')->get();
         $pages = "Akun Mentor";
         return view('dashboard.pages.mentor', compact('mentors', 'pages'));
     }

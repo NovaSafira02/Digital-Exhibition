@@ -13,8 +13,8 @@ class MemberMasterController extends Controller
      */
     public function index()
     {
-        $members = MemberMaster::with('kategori')->get();
-        $kategoris = KategoriProject::all();
+        $members = MemberMaster::orderBy('created_at', 'desc')->get();
+        $kategoris = KategoriProject::orderBy('created_at','desc')->get();
         $pages = "Member Master";
         return view('dashboard.pages.member-master', compact('members', 'kategoris', 'pages'));
     }
