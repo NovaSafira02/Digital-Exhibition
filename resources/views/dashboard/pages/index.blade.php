@@ -15,7 +15,7 @@
                                             aria-hidden="true"></i>
                                     </div>
                                     <h5 class="text-white font-weight-bolder mb-0 mt-3">
-                                        {{ $akun }}
+                                        {{ $akun - 1 }}
                                     </h5>
                                     <span class="text-white text-sm">Total Akun Active</span>
                                 </div>
